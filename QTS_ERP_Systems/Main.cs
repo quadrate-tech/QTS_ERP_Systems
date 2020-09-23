@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using QTS_ERP_Systems.MasterForms;
 
 namespace QTS_ERP_Systems
 {
@@ -15,6 +9,24 @@ namespace QTS_ERP_Systems
         public Main()
         {
             InitializeComponent();
+        }
+
+        private void ManageCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(ManageCategory))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            ManageCategory manageCategory = new ManageCategory
+            {
+                MdiParent = this
+            };
+            manageCategory.Show();
         }
     }
 }

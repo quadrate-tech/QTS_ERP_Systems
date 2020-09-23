@@ -1,20 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using QTS_ERP_Systems.Model;
 
 namespace QTS_ERP_Systems.MasterForms
 {
     public partial class ManageCategory : Form
     {
+
         public ManageCategory()
         {
             InitializeComponent();
+        }
+
+        private void BtnAddCategory_Click(object sender, EventArgs e)
+        {
+            Category c = new Category
+            {
+                Category_Name = TxtCategory.Text.Trim()
+            };
+
+            DbCon db = new DbCon("QTS_ERP");
+            db.InsertRecord("Category", c);
         }
     }
 }

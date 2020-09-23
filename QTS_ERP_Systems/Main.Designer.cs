@@ -59,6 +59,7 @@
             this.ManageCategoryToolStripMenuItem.Name = "ManageCategoryToolStripMenuItem";
             this.ManageCategoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ManageCategoryToolStripMenuItem.Text = "Manage Category";
+            this.ManageCategoryToolStripMenuItem.Click += new System.EventHandler(this.ManageCategoryToolStripMenuItem_Click);
             // 
             // ManageItemsToolStripMenuItem
             // 
@@ -74,6 +75,7 @@
             this.ClientSize = new System.Drawing.Size(1172, 747);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";

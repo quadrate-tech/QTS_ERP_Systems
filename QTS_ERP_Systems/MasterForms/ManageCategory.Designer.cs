@@ -86,9 +86,10 @@
             // 
             // TxtCategory
             // 
+            this.TxtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCategory.Location = new System.Drawing.Point(3, 3);
             this.TxtCategory.Name = "TxtCategory";
-            this.TxtCategory.Size = new System.Drawing.Size(345, 22);
+            this.TxtCategory.Size = new System.Drawing.Size(345, 29);
             this.TxtCategory.TabIndex = 0;
             // 
             // BtnAddCategory
@@ -96,10 +97,11 @@
             this.BtnAddCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnAddCategory.Location = new System.Drawing.Point(354, 3);
             this.BtnAddCategory.Name = "BtnAddCategory";
-            this.BtnAddCategory.Size = new System.Drawing.Size(345, 40);
+            this.BtnAddCategory.Size = new System.Drawing.Size(345, 29);
             this.BtnAddCategory.TabIndex = 1;
             this.BtnAddCategory.Text = "Add Category";
             this.BtnAddCategory.UseVisualStyleBackColor = true;
+            this.BtnAddCategory.Click += new System.EventHandler(this.BtnAddCategory_Click);
             // 
             // ManageCategory
             // 
