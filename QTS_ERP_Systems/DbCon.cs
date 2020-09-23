@@ -5,11 +5,12 @@ namespace QTS_ERP_Systems
     class DbCon
     {
         private IMongoDatabase db;
+        readonly string DbName = "QTS_ERP";
 
-        public DbCon(string database)
+        public DbCon()
         {
             var client = new MongoClient();
-            db = client.GetDatabase(database);
+            db = client.GetDatabase(DbName);
         }
 
         public void InsertRecord<T>(string table, T record)

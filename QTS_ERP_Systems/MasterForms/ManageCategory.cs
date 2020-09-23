@@ -19,8 +19,9 @@ namespace QTS_ERP_Systems.MasterForms
                 Category_Name = TxtCategory.Text.Trim()
             };
 
-            DbCon db = new DbCon("QTS_ERP");
+            DbCon db = new DbCon();
             db.InsertRecord("Category", c);
+            MessageBox.Show("Category Added");
         }
     }
 }
