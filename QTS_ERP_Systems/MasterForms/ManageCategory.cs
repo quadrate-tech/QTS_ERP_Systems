@@ -38,8 +38,8 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void DGVCategory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CategoryId = DGVCategory.Rows[0].Cells[0].Value.ToString();
-            TxtCategory.Text = DGVCategory.Rows[0].Cells[1].Value.ToString();
+            CategoryId = DGVCategory.SelectedRows[0].Cells[0].Value.ToString();
+            TxtCategory.Text = DGVCategory.SelectedRows[0].Cells[1].Value.ToString();
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
