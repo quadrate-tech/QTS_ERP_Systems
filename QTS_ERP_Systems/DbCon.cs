@@ -47,8 +47,8 @@ namespace QTS_ERP_Systems
                 else
                 {
                     IMongoCollection<Category> collection = db.GetCollection<Category>("Category");
-                    List<Category> categoryList = collection.AsQueryable().ToList();
-                    return categoryList;
+                    var result = collection.AsQueryable().ToList();
+                    return result;
                 }
             }
             catch (Exception ex)

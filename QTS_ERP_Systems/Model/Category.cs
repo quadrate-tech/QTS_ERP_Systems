@@ -1,5 +1,7 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using System;
+using System.ComponentModel;
+using System.Security.Permissions;
 
 namespace QTS_ERP_Systems.Model
 {
