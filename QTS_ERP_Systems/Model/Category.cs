@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 
 namespace QTS_ERP_Systems.Model
 {
+    [BsonIgnoreExtraElements]
     class Category
     {
         public Guid Category_Id { get; set; }
