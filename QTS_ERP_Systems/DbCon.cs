@@ -3,6 +3,8 @@ using MongoDB.Driver;
 using QTS_ERP_Systems.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QTS_ERP_Systems
@@ -40,8 +42,7 @@ namespace QTS_ERP_Systems
                 if (!string.IsNullOrEmpty(CatName))
                 {
                     IMongoCollection<Category> collection = db.GetCollection<Category>("Category");
-                    var filter = Builders<Category>.Filter.Regex("Category_Name", new BsonRegularExpression($".*{CatName}*."));
-                    var result = collection.Find(filter).ToList();
+                    var result = collection.AsQueryable().Where(c => c.Category_Name.ToLower().Contains(CatName)).ToList();
                     return result;
                 }
                 else
