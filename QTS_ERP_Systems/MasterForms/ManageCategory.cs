@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing.Design;
 using System.Windows.Forms;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using QTS_ERP_Systems.Model;
 
 namespace QTS_ERP_Systems.MasterForms
@@ -10,7 +12,7 @@ namespace QTS_ERP_Systems.MasterForms
         readonly DbCon db = new DbCon();
         private string CategoryId;
         private string CategoryName;
-        private string Collection = "Category";
+        private readonly string Collection = "Category";
         public ManageCategory()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace QTS_ERP_Systems.MasterForms
         {
             Category c = new Category
             {
+                Category_Id = RandomString.RandString(15),
                 Category_Name = TxtCategory.Text.Trim()
             };
 
@@ -52,6 +55,12 @@ namespace QTS_ERP_Systems.MasterForms
         {
             string Cat = TxtFilter.Text.Trim();
             DGVCategory.DataSource = db.FilterCategory(Cat);
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            db.DeleteOne(CategoryId);
+            FrmLoad();
         }
     }
 }

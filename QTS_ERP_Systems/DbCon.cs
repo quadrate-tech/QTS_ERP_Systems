@@ -1,17 +1,15 @@
-﻿using MongoDB.Bson;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using QTS_ERP_Systems.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QTS_ERP_Systems
 {
     class DbCon
     {
-        private IMongoDatabase db;
+        private readonly IMongoDatabase db;
         readonly string DbName = "QTS_ERP";
 
         public DbCon()
@@ -57,6 +55,13 @@ namespace QTS_ERP_Systems
                 MessageBox.Show(ex.Message);
                 throw;
             }    
+        }
+
+
+        public void DeleteOne(string Id)
+        {
+            IMongoCollection<Category> collection = db.GetCollection<Category>("Category");
+            collection.DeleteOne(a=>a.Category_Id == Id);
         }
     }
 }
