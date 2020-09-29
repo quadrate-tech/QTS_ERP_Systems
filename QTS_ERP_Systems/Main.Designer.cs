@@ -32,6 +32,7 @@
             this.masterFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             // 
             this.masterFormsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ManageCategoryToolStripMenuItem,
-            this.ManageItemsToolStripMenuItem});
+            this.ManageItemsToolStripMenuItem,
+            this.manageEmployeesToolStripMenuItem});
             this.masterFormsToolStripMenuItem.Name = "masterFormsToolStripMenuItem";
             this.masterFormsToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.masterFormsToolStripMenuItem.Text = "Master Forms";
@@ -67,6 +69,13 @@
             this.ManageItemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ManageItemsToolStripMenuItem.Text = "Manage Items";
             // 
+            // manageEmployeesToolStripMenuItem
+            // 
+            this.manageEmployeesToolStripMenuItem.Name = "manageEmployeesToolStripMenuItem";
+            this.manageEmployeesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageEmployeesToolStripMenuItem.Text = "Manage Employees";
+            this.manageEmployeesToolStripMenuItem.Click += new System.EventHandler(this.manageEmployeesToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -77,7 +86,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "Master";
             this.menuStrip1.ResumeLayout(false);
@@ -93,6 +102,7 @@
         private System.Windows.Forms.ToolStripMenuItem masterFormsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ManageCategoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ManageItemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageEmployeesToolStripMenuItem;
     }
 }
 
