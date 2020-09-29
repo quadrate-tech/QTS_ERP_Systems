@@ -28,5 +28,22 @@ namespace QTS_ERP_Systems
             };
             manageCategory.Show();
         }
+
+        private void manageEmployeesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(ManageEmployee))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            ManageEmployee manageEmployee = new ManageEmployee
+            {
+                MdiParent = this
+            };
+            manageEmployee.Show();
+        }
     }
 }
