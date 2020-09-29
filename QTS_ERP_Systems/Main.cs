@@ -28,5 +28,23 @@ namespace QTS_ERP_Systems
             };
             manageCategory.Show();
         }
+
+        private void manageChequesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(ManageCheques))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            ManageCheques manageChq = new ManageCheques
+            {
+                MdiParent = this
+            };
+            manageChq.Show();
+        }
     }
 }
