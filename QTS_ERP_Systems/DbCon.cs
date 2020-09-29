@@ -12,6 +12,7 @@ namespace QTS_ERP_Systems
         private readonly IMongoDatabase db;
         readonly string DbName = "QTS_ERP";
 
+        //create connection
         public DbCon()
         {
             var client = new MongoClient();
