@@ -32,6 +32,7 @@
             this.masterFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageChequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,8 @@
             this.ManageCategoryToolStripMenuItem,
             this.ManageItemsToolStripMenuItem,
             this.manageEmployeesToolStripMenuItem});
+            this.ManageItemsToolStripMenuItem,
+            this.manageChequesToolStripMenuItem});
             this.masterFormsToolStripMenuItem.Name = "masterFormsToolStripMenuItem";
             this.masterFormsToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.masterFormsToolStripMenuItem.Text = "Master Forms";
@@ -75,6 +78,13 @@
             this.manageEmployeesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manageEmployeesToolStripMenuItem.Text = "Manage Employees";
             this.manageEmployeesToolStripMenuItem.Click += new System.EventHandler(this.manageEmployeesToolStripMenuItem_Click);
+            // 
+            // manageChequesToolStripMenuItem
+            // 
+            this.manageChequesToolStripMenuItem.Name = "manageChequesToolStripMenuItem";
+            this.manageChequesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageChequesToolStripMenuItem.Text = "Manage Cheques";
+            this.manageChequesToolStripMenuItem.Click += new System.EventHandler(this.manageChequesToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -103,6 +113,7 @@
         private System.Windows.Forms.ToolStripMenuItem ManageCategoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ManageItemsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageEmployeesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageChequesToolStripMenuItem;
     }
 }
 
