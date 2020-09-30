@@ -52,7 +52,7 @@
             this.masterFormsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ManageCategoryToolStripMenuItem,
             this.ManageItemsToolStripMenuItem,
-            this.manageEmployeesToolStripMenuItem});
+            this.manageEmployeesToolStripMenuItem,
             this.ManageItemsToolStripMenuItem,
             this.manageChequesToolStripMenuItem});
             this.masterFormsToolStripMenuItem.Name = "masterFormsToolStripMenuItem";
