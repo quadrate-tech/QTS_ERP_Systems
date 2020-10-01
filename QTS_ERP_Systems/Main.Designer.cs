@@ -32,8 +32,9 @@
             this.masterFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageChequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageChequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,10 +52,10 @@
             // 
             this.masterFormsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ManageCategoryToolStripMenuItem,
-            this.ManageItemsToolStripMenuItem,
             this.manageEmployeesToolStripMenuItem,
             this.ManageItemsToolStripMenuItem,
-            this.manageChequesToolStripMenuItem});
+            this.manageChequesToolStripMenuItem,
+            this.manageCustomersToolStripMenuItem});
             this.masterFormsToolStripMenuItem.Name = "masterFormsToolStripMenuItem";
             this.masterFormsToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.masterFormsToolStripMenuItem.Text = "Master Forms";
@@ -86,6 +87,13 @@
             this.manageChequesToolStripMenuItem.Text = "Manage Cheques";
             this.manageChequesToolStripMenuItem.Click += new System.EventHandler(this.manageChequesToolStripMenuItem_Click);
             // 
+            // manageCustomersToolStripMenuItem
+            // 
+            this.manageCustomersToolStripMenuItem.Name = "manageCustomersToolStripMenuItem";
+            this.manageCustomersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageCustomersToolStripMenuItem.Text = "Manage Customers";
+            this.manageCustomersToolStripMenuItem.Click += new System.EventHandler(this.manageCustomersToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -114,6 +122,7 @@
         private System.Windows.Forms.ToolStripMenuItem ManageItemsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageEmployeesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageChequesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageCustomersToolStripMenuItem;
     }
 }
 

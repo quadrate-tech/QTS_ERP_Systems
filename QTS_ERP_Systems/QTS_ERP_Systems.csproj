@@ -144,6 +144,12 @@
     <Compile Include="MasterForms\ManageCategory.Designer.cs">
       <DependentUpon>ManageCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="MasterForms\ManageCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForms\ManageCustomers.Designer.cs">
+      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="MasterForms\ManageEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,7 @@
     </Compile>
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Cheque.cs" />
+    <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\RandomString.cs" />
     <Compile Include="Program.cs" />
@@ -170,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForms\ManageCheques.resx">
       <DependentUpon>ManageCheques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForms\ManageCustomers.resx">
+      <DependentUpon>ManageCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForms\ManageEmployee.resx">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
