@@ -63,5 +63,23 @@ namespace QTS_ERP_Systems
             };
             manageChq.Show();
         }
+
+        private void manageCustomersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(ManageCustomers))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            ManageCustomers manageCustomers = new ManageCustomers
+            {
+                MdiParent = this
+            };
+            manageCustomers.Show();
+        }
     }
 }
