@@ -25,14 +25,14 @@ namespace QTS_ERP_Systems
 
         //public static string CashierName()
         //{
-        //    //using (BillingContext db = new BillingContext())
-        //    //{
-        //    //    var cas = db.Employee.FirstOrDefault(c => c.EmployeeId == CashierId && !c.IsDeleted);
-        //    //    if (cas != null)
-        //    //        return cas.EmployeeName.ToString();
-        //    //    else
-        //    //        return string.Empty;
-        //    //}
+        //    using (BillingContext db = new BillingContext())
+        //    {
+        //        var cas = db.Employee.FirstOrDefault(c => c.EmployeeId == CashierId && !c.IsDeleted);
+        //        if (cas != null)
+        //            return cas.EmployeeName.ToString();
+        //        else
+        //            return string.Empty;
+        //    }
         //}
 
         public static void ToCapital(TextBox txt)
