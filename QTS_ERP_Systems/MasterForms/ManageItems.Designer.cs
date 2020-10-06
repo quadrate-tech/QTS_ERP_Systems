@@ -67,16 +67,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.TxtFilterItems = new System.Windows.Forms.TextBox();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             this.BaseLayout.SuspendLayout();
             this.panel1.SuspendLayout();
             this.PanelCRUD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVItems)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -160,7 +156,6 @@
             // 
             // CmbCategories
             // 
-            this.CmbCategories.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.categoryBindingSource, "Items", true));
             this.CmbCategories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CmbCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbCategories.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -172,7 +167,6 @@
             // 
             // CmbShelf
             // 
-            this.CmbShelf.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.categoryBindingSource, "Items", true));
             this.CmbShelf.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CmbShelf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbShelf.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -400,7 +394,6 @@
             // ChkBoxIsService
             // 
             this.ChkBoxIsService.AutoSize = true;
-            this.ChkBoxIsService.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.itemBindingSource, "IsService", true));
             this.ChkBoxIsService.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ChkBoxIsService.ForeColor = System.Drawing.Color.White;
             this.ChkBoxIsService.Location = new System.Drawing.Point(117, 471);
@@ -562,8 +555,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVItems)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,7 +568,6 @@
         private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.ComboBox CmbCategories;
-        private System.Windows.Forms.BindingSource categoryBindingSource;
         private System.Windows.Forms.ComboBox CmbShelf;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
@@ -597,7 +587,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel PanelCRUD;
         private System.Windows.Forms.CheckBox ChkBoxIsService;
-        private System.Windows.Forms.BindingSource itemBindingSource;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtUnitCost;
         private System.Windows.Forms.Label label7;

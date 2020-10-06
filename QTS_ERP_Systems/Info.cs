@@ -23,17 +23,17 @@ namespace QTS_ERP_Systems
         public static int CashierId { get; set; }
         public static int UserType { get; set; }
 
-        public static string CashierName()
-        {
-            using (BillingContext db = new BillingContext())
-            {
-                var cas = db.Employee.FirstOrDefault(c => c.EmployeeId == CashierId && !c.IsDeleted);
-                if (cas != null)
-                    return cas.EmployeeName.ToString();
-                else
-                    return string.Empty;
-            }
-        }
+        //public static string CashierName()
+        //{
+        //    //using (BillingContext db = new BillingContext())
+        //    //{
+        //    //    var cas = db.Employee.FirstOrDefault(c => c.EmployeeId == CashierId && !c.IsDeleted);
+        //    //    if (cas != null)
+        //    //        return cas.EmployeeName.ToString();
+        //    //    else
+        //    //        return string.Empty;
+        //    //}
+        //}
 
         public static void ToCapital(TextBox txt)
         {
@@ -325,46 +325,6 @@ namespace QTS_ERP_Systems
                 }
                 xcelApp.Columns.AutoFit();
                 xcelApp.Visible = true;
-            }
-        }
-
-        public static void ExportAsPdf(DataTable dgv)
-        {
-            SaveFileDialog sfd = new SaveFileDialog
-            {
-                Filter = "PDF (*.pdf)|*.pdf",
-                FileName = "test"
-            };
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                Spire.DataExport.PDF.PDFExport PDFExport = new Spire.DataExport.PDF.PDFExport
-                {
-                    DataSource = Spire.DataExport.Common.ExportSource.DataTable,
-                    DataTable = dgv,
-                    ActionAfterExport = Spire.DataExport.Common.ActionType.OpenView
-                };
-
-                PDFExport.PDFOptions.PageOptions.Orientation = Spire.DataExport.Common.PageOrientation.Landscape;
-                PDFExport.SaveToFile(sfd.FileName);
-            }
-        }
-        public static void ExpPDF(DataTable dt)
-        {
-            SaveFileDialog sfd = new SaveFileDialog
-            {
-                Filter = "PDF (*.pdf)|*.pdf",
-                FileName = "test"
-            };
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                Spire.DataExport.PDF.PDFExport PDFExport = new Spire.DataExport.PDF.PDFExport
-                {
-                    DataSource = Spire.DataExport.Common.ExportSource.DataTable,
-                    DataTable = dt,
-                    ActionAfterExport = Spire.DataExport.Common.ActionType.OpenView
-                };
-                PDFExport.PDFOptions.PageOptions.Orientation = Spire.DataExport.Common.PageOrientation.Landscape;
-                PDFExport.SaveToFile(sfd.FileName);
             }
         }
 

@@ -76,7 +76,7 @@ namespace QTS_ERP_Systems.MasterForms
             {
                 Employee_Id = RandomString.RandString(15),
                 Employee_Name = txtEmployeeName.Text.Trim(),
-                Contact_No = Convert.ToInt32(txtContact.Text),
+                Contact_No = txtContact.Text,
                 Address = txtAddress.Text.Trim(),
                 Email = txtEmail.Text.Trim(),
                 SecretCode = txtSecretCode.Text.Trim()

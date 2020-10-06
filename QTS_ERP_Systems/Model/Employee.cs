@@ -14,7 +14,7 @@ namespace QTS_ERP_Systems.Model
     {
         public string Employee_Id { get; set; }
         public string Employee_Name { get; set; }
-        public int Contact_No { get; set; }
+        public string Contact_No { get; set; }
         public string Address { get; set; }
         [EmailAddress]
         public string Email { get; set; }
