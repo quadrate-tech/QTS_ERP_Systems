@@ -31,9 +31,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.masterFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageChequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             this.masterFormsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1172, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1155, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -51,38 +51,39 @@
             // 
             this.masterFormsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ManageCategoryToolStripMenuItem,
-            this.ManageItemsToolStripMenuItem,
             this.manageEmployeesToolStripMenuItem,
             this.ManageItemsToolStripMenuItem,
             this.manageChequesToolStripMenuItem});
             this.masterFormsToolStripMenuItem.Name = "masterFormsToolStripMenuItem";
             this.masterFormsToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.masterFormsToolStripMenuItem.Text = "Master Forms";
+            this.masterFormsToolStripMenuItem.Click += new System.EventHandler(this.masterFormsToolStripMenuItem_Click);
             // 
             // ManageCategoryToolStripMenuItem
             // 
             this.ManageCategoryToolStripMenuItem.Name = "ManageCategoryToolStripMenuItem";
-            this.ManageCategoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ManageCategoryToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.ManageCategoryToolStripMenuItem.Text = "Manage Category";
             this.ManageCategoryToolStripMenuItem.Click += new System.EventHandler(this.ManageCategoryToolStripMenuItem_Click);
-            // 
-            // ManageItemsToolStripMenuItem
-            // 
-            this.ManageItemsToolStripMenuItem.Name = "ManageItemsToolStripMenuItem";
-            this.ManageItemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ManageItemsToolStripMenuItem.Text = "Manage Items";
             // 
             // manageEmployeesToolStripMenuItem
             // 
             this.manageEmployeesToolStripMenuItem.Name = "manageEmployeesToolStripMenuItem";
-            this.manageEmployeesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageEmployeesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.manageEmployeesToolStripMenuItem.Text = "Manage Employees";
             this.manageEmployeesToolStripMenuItem.Click += new System.EventHandler(this.manageEmployeesToolStripMenuItem_Click);
+            // 
+            // ManageItemsToolStripMenuItem
+            // 
+            this.ManageItemsToolStripMenuItem.Name = "ManageItemsToolStripMenuItem";
+            this.ManageItemsToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.ManageItemsToolStripMenuItem.Text = "Manage Items";
+            this.ManageItemsToolStripMenuItem.Click += new System.EventHandler(this.ManageItemsToolStripMenuItem_Click);
             // 
             // manageChequesToolStripMenuItem
             // 
             this.manageChequesToolStripMenuItem.Name = "manageChequesToolStripMenuItem";
-            this.manageChequesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageChequesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.manageChequesToolStripMenuItem.Text = "Manage Cheques";
             this.manageChequesToolStripMenuItem.Click += new System.EventHandler(this.manageChequesToolStripMenuItem_Click);
             // 
@@ -91,7 +92,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1172, 747);
+            this.ClientSize = new System.Drawing.Size(1155, 730);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;

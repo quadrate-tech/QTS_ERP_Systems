@@ -10,6 +10,7 @@ namespace QTS_ERP_Systems.Model
     [BsonIgnoreExtraElements]
     class Cheque
     {
+       
         public int ChequeNumber { get; set; }
         public string Payee { get; set; }
         public int Amount { get; set; }

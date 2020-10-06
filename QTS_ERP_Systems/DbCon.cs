@@ -34,6 +34,11 @@ namespace QTS_ERP_Systems
             var Collection = db.GetCollection<T>(table);
             Collection.InsertOne(record);
         }
+         public void InsertItem<T>(string table, T record)
+        {
+            var Collection = db.GetCollection<T>(table);
+            Collection.InsertOne(record);
+        }
         public void UpdateCategory(string table,string Id, string categoryName)
         {
             var collection = db.GetCollection<Category>(table);
@@ -52,6 +57,20 @@ namespace QTS_ERP_Systems
                                                 .Set("BankName", BankName);
             Collection.UpdateOne(filter, update);
         }
+        public void UpdateItem(string table, string ItmNo, int item_code, string item_name, string printable_name, string unit_type, int unit_cost, int selling_price, bool is_service)
+        {
+            var Collection = db.GetCollection<Item>(table);
+            var filter = Builders<Item>.Filter.Eq("item_id", ItmNo);
+            var update = Builders<Item>.Update.Set("item_code", item_code)
+                                                .Set("item_name", item_name)
+                                                .Set("printable_name", printable_name)
+                                                .Set("unit_type", unit_type)
+                                                .Set("unit_cost", unit_cost)
+                                                .Set("unit_cost", selling_price)
+                                                .Set("unit_cost", is_service);
+
+            Collection.UpdateOne(filter, update);
+        }
         public void UpdateEmployee(string table,string Employee_Id,string Employee_Name, int Contact_No, string Address, string Email, string SecretCode)
         {
             var Collection = db.GetCollection<Employee>(table);
@@ -63,6 +82,7 @@ namespace QTS_ERP_Systems
                                                   .Set("SecretCode", SecretCode);
             Collection.UpdateOne(filter, update);
         }
+
 
         public List<Employee> FilterEmployee(string EmpName)
         {
@@ -134,6 +154,30 @@ namespace QTS_ERP_Systems
             }
         }
 
+
+        public List<Item> FilterItem(string ItNo)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(ItNo))
+                {
+                    IMongoCollection<Item> Collection = db.GetCollection<Item>("Items");
+                    var result = Collection.AsQueryable().Where(u => u.item_name.ToLower().Contains(ItNo)).ToList();//
+                    return result;
+                }
+                else
+                {
+                    IMongoCollection<Item> Collection = db.GetCollection<Item>("Items");
+                    var result = Collection.AsQueryable().ToList();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
         public void DeleteOne(string Id)
         {
             IMongoCollection<Category> collection = db.GetCollection<Category>("Category");
@@ -156,6 +200,12 @@ namespace QTS_ERP_Systems
         {
             IMongoCollection<Employee> collection = db.GetCollection<Employee>("Employees");
             collection.DeleteOne(a => a.Employee_Id == Id);
+        }
+
+        public void DeleteItem(string Id)
+        {
+            IMongoCollection<Item> collection = db.GetCollection<Item>("Items");
+            collection.DeleteOne(a => a.item_id == Id);
         }
     }
 }
