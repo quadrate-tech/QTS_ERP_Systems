@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace QTS_ERP_Systems.Model
 {
+    [BsonIgnoreExtraElements]
     class Item
     {
+        
         public string item_id { get; set; }
         public int item_code { get; set; }
         public string item_name { get; set; }
