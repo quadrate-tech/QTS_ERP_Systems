@@ -47,6 +47,7 @@ namespace QTS_ERP_Systems.MasterForms
             txtUnitType.Clear();
             txtUnitCost.Clear();
             //txtService.Clear();
+           yesbtn.Checked = false;
             txtSellingPrice.Clear();
         }
         private void EnableTrue()
@@ -109,16 +110,23 @@ namespace QTS_ERP_Systems.MasterForms
             }
         }
       
-        private bool service() {
-            bool Service=false;
-                if (yesbtn.Checked)
-            {  
-                Service=true; 
-            }            
-            else { 
-                Service = true; 
-            }
-            return Service;
+        //private bool service() {
+        //    bool Service=false;
+        //        if (yesbtn.Checked==true)
+        //    {  
+        //        Service=true; 
+        //    }            
+        //    else { 
+        //        Service = false; 
+        //    }
+        //    return Service;
+        //}
+        private bool service()
+        {
+            if (yesbtn.Checked)
+                return true;
+            else
+                return false;
         }
         //UPDATE BUTTON 
         private void BTNUPDATE_Click_1(object sender, EventArgs e)
@@ -130,7 +138,7 @@ namespace QTS_ERP_Systems.MasterForms
             unittype = txtUnitType.Text.Trim();
             unitcost = Convert.ToInt32(txtUnitCost.Text.Trim());
             sellingprice = Convert.ToInt32(txtSellingPrice.Text);
-            isservice = service();//Convert.ToBoolean(txtService.Text);
+            isservice =service();//Convert.ToBoolean(txtService.Text);Convert.ToBoolean(yesbtn.Enabled);
 
             db.UpdateItem(Collection, itemid, itemcode, itemname, printablename, unittype, unitcost, sellingprice, isservice);
             ClearText();
@@ -160,9 +168,7 @@ namespace QTS_ERP_Systems.MasterForms
             FormLoad();
             EnableTrue();
         }
-      
-
-        
+           
       
 
         private void dgvItem_CellClick(object sender, DataGridViewCellEventArgs e)
