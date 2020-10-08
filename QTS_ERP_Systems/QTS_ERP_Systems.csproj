@@ -138,6 +138,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="MasterForms\bank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForms\bank.Designer.cs">
+      <DependentUpon>bank.cs</DependentUpon>
+    </Compile>
     <Compile Include="MasterForms\ManageCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,7 @@
     <Compile Include="MasterForms\ManageCheques.Designer.cs">
       <DependentUpon>ManageCheques.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Bank.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Cheque.cs" />
     <Compile Include="Model\Employee.cs" />

@@ -34,6 +34,15 @@ namespace QTS_ERP_Systems
             var Collection = db.GetCollection<T>(table);
             Collection.InsertOne(record);
         }
+
+        public void InsertBank<T>(string table, T record)
+        {
+            var Collection = db.GetCollection<T>(table);
+            Collection.InsertOne(record);
+        }
+
+
+
         public void UpdateCategory(string table,string Id, string categoryName)
         {
             var collection = db.GetCollection<Category>(table);
@@ -61,6 +70,14 @@ namespace QTS_ERP_Systems
                                                   .Set("Address", Address)
                                                   .Set("Email", Email)
                                                   .Set("SecretCode", SecretCode);
+            Collection.UpdateOne(filter, update);
+        }
+
+        public void UpdateBank(string table, string Bank_Id, string Bank_Name)
+        {
+            var Collection = db.GetCollection<Bank>(table);
+            var filter = Builders<Bank>.Filter.Eq("Bank_Id", Bank_Id);
+            var update = Builders<Bank>.Update.Set("Bank_Name", Bank_Name);
             Collection.UpdateOne(filter, update);
         }
 
