@@ -11,7 +11,7 @@ namespace QTS_ERP_Systems.Model
     class Item
     {
         
-        public string item_id { get; set; }
+        public int item_id { get; set; }
         public int item_code { get; set; }
         public string item_name { get; set; }
         public string printable_name { get; set; }

@@ -13,9 +13,9 @@ namespace QTS_ERP_Systems.MasterForms
     public partial class ManageItem : Form
     {
         readonly DbCon db = new DbCon();
-        
-        private string iTEMNo;
 
+        private string iTEMNo;
+        private int lastId;
         private string itemid;
         private int itemcode;
         private string itemname;
@@ -47,7 +47,6 @@ namespace QTS_ERP_Systems.MasterForms
             txtUnitType.Clear();
             txtUnitCost.Clear();
             //txtService.Clear();
-           yesbtn.Checked = false;
             txtSellingPrice.Clear();
         }
         private void EnableTrue()
@@ -58,7 +57,7 @@ namespace QTS_ERP_Systems.MasterForms
             txtPrintName.Enabled = true;
             txtUnitType.Enabled = true;
             txtUnitCost.Enabled = true;
-          
+
             yesbtn.Checked = true;
             txtSellingPrice.Enabled = true;
         }
@@ -83,17 +82,17 @@ namespace QTS_ERP_Systems.MasterForms
         //SAVE BUTTON 
         private void BTNSAVE_Click_1(object sender, EventArgs e)
         {
-            int IMNo = Convert.ToInt32(txtItemNo.Text);
-            bool IMChqNo = db.CheckChequeNo(IMNo);
-            if (IMChqNo == true)
-            {
-                MessageBox.Show("This Item Already Added");
-            }
-            else
+            //int IMNo = Convert.ToInt32(txtItemNo.Text);
+            //bool IMChqNo = db.CheckChequeNo(IMNo);
+            //if (IMChqNo == true)
+            //{
+            //    MessageBox.Show("This Item Already Added");
+            //}
+            //else
             {
                 Item itm = new Item
                 {
-                    item_id = txtItemNo.Text,
+                    item_id = generateId( itemid),//txtItemNo.Text
                     item_code = Convert.ToInt32(txtItemCode.Text.Trim()),
                     item_name = txtItemName.Text.Trim(),
                     printable_name = txtPrintName.Text.Trim(),
@@ -109,44 +108,43 @@ namespace QTS_ERP_Systems.MasterForms
 
             }
         }
-      
-        //private bool service() {
-        //    bool Service=false;
-        //        if (yesbtn.Checked==true)
-        //    {  
-        //        Service=true; 
-        //    }            
-        //    else { 
-        //        Service = false; 
-        //    }
-        //    return Service;
-        //}
+        private int generateId(string currentId)
+        {
+            lastId= Convert.ToInt32(currentId);
+            return lastId++;
+        }
         private bool service()
         {
+            bool Service = false;
             if (yesbtn.Checked)
-                return true;
+            {
+                Service = true;
+            }
             else
-                return false;
+            {
+                Service = true;
+            }
+            return Service;
         }
         //UPDATE BUTTON 
         private void BTNUPDATE_Click_1(object sender, EventArgs e)
         {
-            itemid = txtItemNo.Text;
+            //itemid = txtItemNo.Text;
             itemcode = Convert.ToInt32(txtItemCode.Text.Trim());
             itemname = txtItemName.Text.Trim();
             printablename = txtPrintName.Text.Trim();
             unittype = txtUnitType.Text.Trim();
             unitcost = Convert.ToInt32(txtUnitCost.Text.Trim());
             sellingprice = Convert.ToInt32(txtSellingPrice.Text);
-            isservice =service();//Convert.ToBoolean(txtService.Text);Convert.ToBoolean(yesbtn.Enabled);
+            isservice = service();//Convert.ToBoolean(txtService.Text);
 
             db.UpdateItem(Collection, itemid, itemcode, itemname, printablename, unittype, unitcost, sellingprice, isservice);
             ClearText();
 
-            
+
             FormLoad();
         }
-      
+
 
         private void txtSearchItem_keypress(object sender, KeyPressEventArgs e)
         {
@@ -157,7 +155,7 @@ namespace QTS_ERP_Systems.MasterForms
         {
             string IEM = txtSearchItem.Text.Trim();
             dgvItem.DataSource = db.FilterItem(IEM);
-          
+
         }
         //DELETE BUTTON 
         private void BTNDELETE_Click_1(object sender, EventArgs e)
@@ -168,22 +166,24 @@ namespace QTS_ERP_Systems.MasterForms
             FormLoad();
             EnableTrue();
         }
-           
-      
+
+
+
+
 
         private void dgvItem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtItemNo.Text = dgvItem.CurrentRow.Cells[0].Value.ToString();
+            itemid = dgvItem.CurrentRow.Cells[0].Value.ToString();//txtItemNo.Text
             txtItemCode.Text = dgvItem.CurrentRow.Cells[1].Value.ToString();
             txtItemName.Text = dgvItem.CurrentRow.Cells[2].Value.ToString();
             txtPrintName.Text = dgvItem.CurrentRow.Cells[3].Value.ToString();
             txtUnitType.Text = dgvItem.CurrentRow.Cells[4].Value.ToString();
             txtUnitCost.Text = dgvItem.CurrentRow.Cells[5].Value.ToString();
             txtSellingPrice.Text = dgvItem.CurrentRow.Cells[6].Value.ToString();
-             yesbtn.Enabled= Convert.ToBoolean(dgvItem.CurrentRow.Cells[7].Value.ToString());
+            yesbtn.Enabled = Convert.ToBoolean(dgvItem.CurrentRow.Cells[7].Value.ToString());
             EnableTrue();
             //txtItemNo.Enabled = false;txtService.Text
-            
+
         }
 
 

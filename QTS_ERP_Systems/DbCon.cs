@@ -34,12 +34,12 @@ namespace QTS_ERP_Systems
             var Collection = db.GetCollection<T>(table);
             Collection.InsertOne(record);
         }
-         public void InsertItem<T>(string table, T record)
+        public void InsertItem<T>(string table, T record)
         {
             var Collection = db.GetCollection<T>(table);
             Collection.InsertOne(record);
         }
-        public void UpdateCategory(string table,string Id, string categoryName)
+        public void UpdateCategory(string table, string Id, string categoryName)
         {
             var collection = db.GetCollection<Category>(table);
             var filter = Builders<Category>.Filter.Eq("Category_Id", Id);
@@ -71,7 +71,7 @@ namespace QTS_ERP_Systems
 
             Collection.UpdateOne(filter, update);
         }
-        public void UpdateEmployee(string table,string Employee_Id,string Employee_Name, int Contact_No, string Address, string Email, string SecretCode)
+        public void UpdateEmployee(string table, string Employee_Id, string Employee_Name, int Contact_No, string Address, string Email, string SecretCode)
         {
             var Collection = db.GetCollection<Employee>(table);
             var filter = Builders<Employee>.Filter.Eq("Employee_Id", Employee_Id);
@@ -128,7 +128,7 @@ namespace QTS_ERP_Systems
             {
                 MessageBox.Show(ex.Message);
                 throw;
-            }    
+            }
         }
         public List<Cheque> FilterCheque(string ChequeNo)
         {
@@ -181,14 +181,14 @@ namespace QTS_ERP_Systems
         public void DeleteOne(string Id)
         {
             IMongoCollection<Category> collection = db.GetCollection<Category>("Category");
-            collection.DeleteOne(a=>a.Category_Id == Id);
+            collection.DeleteOne(a => a.Category_Id == Id);
         }
         public void DeleteCheque(int ChqNo)
         {
             IMongoCollection<Cheque> Collection = db.GetCollection<Cheque>("Cheques");
             Collection.DeleteOne(a => a.ChequeNumber == ChqNo);
         }
-        
+
         public bool CheckChequeNo(int ChqNo)
         {
             IMongoCollection<Cheque> Collection = db.GetCollection<Cheque>("Cheques");
@@ -204,8 +204,8 @@ namespace QTS_ERP_Systems
 
         public void DeleteItem(string Id)
         {
-            IMongoCollection<Item> collection = db.GetCollection<Item>("Items");
-            collection.DeleteOne(a => a.item_id == Id);
+            //IMongoCollection<Item> collection = db.GetCollection<Item>("Items");
+            //collection.DeleteOne(a => a.item_id == Id);
         }
     }
 }

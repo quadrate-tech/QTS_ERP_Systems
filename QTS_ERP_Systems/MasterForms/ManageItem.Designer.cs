@@ -43,7 +43,6 @@
             this.txtSellingPrice = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtItemCode = new System.Windows.Forms.TextBox();
-            this.txtItemName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.yesbtn = new System.Windows.Forms.RadioButton();
             this.txtItemNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtItemName = new System.Windows.Forms.TextBox();
             this.dgvItem = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4.SuspendLayout();
@@ -231,11 +231,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(60, 58);
+            this.label5.Location = new System.Drawing.Point(57, 58);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 20);
+            this.label5.Size = new System.Drawing.Size(92, 20);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Item code";
+            this.label5.Text = "Item Code";
             // 
             // txtItemCode
             // 
@@ -246,26 +246,17 @@
             this.txtItemCode.Size = new System.Drawing.Size(241, 26);
             this.txtItemCode.TabIndex = 1;
             // 
-            // txtItemName
-            // 
-            this.txtItemName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemName.Location = new System.Drawing.Point(155, 102);
-            this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Size = new System.Drawing.Size(241, 26);
-            this.txtItemName.TabIndex = 2;
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(55, 105);
+            this.label6.Location = new System.Drawing.Point(53, 105);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 20);
+            this.label6.Size = new System.Drawing.Size(96, 20);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Item name";
+            this.label6.Text = "Item Name";
             // 
             // label1
             // 
@@ -273,11 +264,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(45, 315);
+            this.label1.Location = new System.Drawing.Point(41, 315);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 20);
+            this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 11;
-            this.label1.Text = "selling price";
+            this.label1.Text = "Selling Price";
             // 
             // label8
             // 
@@ -285,11 +276,11 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(84, 275);
+            this.label8.Location = new System.Drawing.Point(81, 275);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 20);
+            this.label8.Size = new System.Drawing.Size(68, 20);
             this.label8.TabIndex = 12;
-            this.label8.Text = "service";
+            this.label8.Text = "Service";
             // 
             // label7
             // 
@@ -297,11 +288,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(71, 232);
+            this.label7.Location = new System.Drawing.Point(65, 232);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 20);
+            this.label7.Size = new System.Drawing.Size(84, 20);
             this.label7.TabIndex = 7;
-            this.label7.Text = "unit cost";
+            this.label7.Text = "Unit Cost";
             // 
             // label4
             // 
@@ -309,11 +300,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(21, 149);
+            this.label4.Location = new System.Drawing.Point(18, 149);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 20);
+            this.label4.Size = new System.Drawing.Size(131, 20);
             this.label4.TabIndex = 4;
-            this.label4.Text = "printable name";
+            this.label4.Text = "Printable Name";
             // 
             // txtUnitCost
             // 
@@ -349,11 +340,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(71, 188);
+            this.label3.Location = new System.Drawing.Point(64, 188);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 20);
+            this.label3.Size = new System.Drawing.Size(85, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "unit type";
+            this.label3.Text = "Unit Type";
             // 
             // yesbtn
             // 
@@ -389,6 +380,15 @@
             this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 13;
             this.label2.Text = "Item Id";
+            // 
+            // txtItemName
+            // 
+            this.txtItemName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemName.Location = new System.Drawing.Point(155, 102);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.Size = new System.Drawing.Size(241, 26);
+            this.txtItemName.TabIndex = 2;
             // 
             // dgvItem
             // 
