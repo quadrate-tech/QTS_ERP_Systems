@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtShelve_Id = new System.Windows.Forms.TextBox();
             this.txtShelve_Name = new System.Windows.Forms.TextBox();
             this.add = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
@@ -43,6 +41,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
+            this.save = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShelve)).BeginInit();
             this.SuspendLayout();
@@ -52,66 +51,47 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtShelve_Id, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtShelve_Name, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtShelve_Name, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(32, 32);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(691, 100);
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(691, 65);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(290, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Shelve Id";
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(271, 68);
+            this.label2.Location = new System.Drawing.Point(271, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Shelve Name";
             // 
-            // txtShelve_Id
-            // 
-            this.txtShelve_Id.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtShelve_Id.Location = new System.Drawing.Point(348, 15);
-            this.txtShelve_Id.Name = "txtShelve_Id";
-            this.txtShelve_Id.Size = new System.Drawing.Size(197, 20);
-            this.txtShelve_Id.TabIndex = 2;
-            // 
             // txtShelve_Name
             // 
             this.txtShelve_Name.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtShelve_Name.Location = new System.Drawing.Point(348, 65);
+            this.txtShelve_Name.Location = new System.Drawing.Point(348, 22);
             this.txtShelve_Name.Name = "txtShelve_Name";
             this.txtShelve_Name.Size = new System.Drawing.Size(197, 20);
             this.txtShelve_Name.TabIndex = 3;
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(380, 187);
+            this.add.Location = new System.Drawing.Point(380, 101);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 23);
             this.add.TabIndex = 1;
             this.add.Text = "Add";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(479, 187);
+            this.update.Location = new System.Drawing.Point(479, 134);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(75, 23);
             this.update.TabIndex = 2;
@@ -120,7 +100,7 @@
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(573, 187);
+            this.delete.Location = new System.Drawing.Point(573, 134);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(75, 23);
             this.delete.TabIndex = 3;
@@ -134,9 +114,9 @@
             this.dgvShelve.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ShelveId,
             this.ShelveName});
-            this.dgvShelve.Location = new System.Drawing.Point(32, 234);
+            this.dgvShelve.Location = new System.Drawing.Point(32, 179);
             this.dgvShelve.Name = "dgvShelve";
-            this.dgvShelve.Size = new System.Drawing.Size(745, 204);
+            this.dgvShelve.Size = new System.Drawing.Size(745, 259);
             this.dgvShelve.TabIndex = 4;
             // 
             // ShelveId
@@ -152,7 +132,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 192);
+            this.label3.Location = new System.Drawing.Point(58, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 5;
@@ -160,14 +140,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 189);
+            this.textBox1.Location = new System.Drawing.Point(123, 136);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 6;
             // 
             // search
             // 
-            this.search.Location = new System.Drawing.Point(253, 186);
+            this.search.Location = new System.Drawing.Point(253, 133);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(75, 23);
             this.search.TabIndex = 7;
@@ -176,7 +156,7 @@
             // 
             // cancel
             // 
-            this.cancel.Location = new System.Drawing.Point(665, 187);
+            this.cancel.Location = new System.Drawing.Point(665, 134);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 8;
@@ -184,11 +164,22 @@
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
+            // save
+            // 
+            this.save.Location = new System.Drawing.Point(380, 134);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.TabIndex = 9;
+            this.save.Text = "Save";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
+            // 
             // ManageShelves
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.save);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.search);
             this.Controls.Add(this.textBox1);
@@ -212,9 +203,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtShelve_Id;
         private System.Windows.Forms.TextBox txtShelve_Name;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button update;
@@ -226,5 +215,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.Button save;
     }
 }

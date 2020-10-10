@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QTS_ERP_Systems.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,6 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void ClearText()
         {
-            txtShelve_Id.Clear();
             txtShelve_Name.Clear();
         }
         public void frmLoad()
@@ -37,19 +37,36 @@ namespace QTS_ERP_Systems.MasterForms
         }
         private void EnableFalse()
         {
-            txtShelve_Id.Enabled = false;
             txtShelve_Name.Enabled = false;
         }
         private void EnableTrue()
         {
             txtShelve_Name.Enabled = true;
-            txtShelve_Id.Enabled = true;
         }
 
         private void cancel_Click(object sender, EventArgs e)
         {
             ClearText();
             EnableFalse();
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            EnableTrue();
+            ClearText();
+            txtShelve_Name.Focus();
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            Shelve shelve = new Shelve
+            {
+                ShelveId = RandomString.RandString(15),
+                ShelveName = txtShelve_Name.Text.Trim()
+            };
+            db.InsertShelve(Collection, shelve);
+            ClearText();
+            frmLoad();
         }
     }
 }
