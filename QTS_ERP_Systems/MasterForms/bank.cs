@@ -85,5 +85,11 @@ namespace QTS_ERP_Systems.MasterForms
             txtBank.Text = dgvBank.CurrentRow.Cells[1].Value.ToString();
             EnableTrue();
         }
+
+        private void txtSearchBank_KeyUp(object sender, KeyEventArgs e)
+        {
+            string bank = txtSearchBank.Text.Trim();
+            dgvBank.DataSource = db.FilterBank(bank);
+        }
     }
 }

@@ -92,6 +92,7 @@
             this.txtSearchBank.Name = "txtSearchBank";
             this.txtSearchBank.Size = new System.Drawing.Size(100, 20);
             this.txtSearchBank.TabIndex = 2;
+            this.txtSearchBank.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearchBank_KeyUp);
             // 
             // dgvBank
             // 
