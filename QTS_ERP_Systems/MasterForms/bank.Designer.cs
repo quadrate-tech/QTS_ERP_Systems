@@ -123,6 +123,7 @@
             this.add.TabIndex = 4;
             this.add.Text = "Add";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // save
             // 
@@ -132,6 +133,7 @@
             this.save.TabIndex = 5;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // update
             // 

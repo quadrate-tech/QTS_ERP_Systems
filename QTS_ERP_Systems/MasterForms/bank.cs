@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QTS_ERP_Systems.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,6 +50,25 @@ namespace QTS_ERP_Systems.MasterForms
         {
             ClearText();
             EnableFalse();
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            EnableTrue();
+            txtBank.Focus();
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            Bank bank = new Bank
+            {
+                bank_id = RandomString.RandString(15),
+                bank_name = txtBank.Text.Trim(),
+            };
+            db.InsertBank(Collection, bank);
+            ClearText();
+            frmLoad();
         }
     }
 }
