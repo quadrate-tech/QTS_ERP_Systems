@@ -28,12 +28,203 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtShelve_Id = new System.Windows.Forms.TextBox();
+            this.txtShelve_Name = new System.Windows.Forms.TextBox();
+            this.add = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.dgvShelve = new System.Windows.Forms.DataGridView();
+            this.ShelveId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ShelveName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.search = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShelve)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtShelve_Id, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtShelve_Name, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(32, 32);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(691, 100);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(290, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Shelve Id";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(271, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Shelve Name";
+            // 
+            // txtShelve_Id
+            // 
+            this.txtShelve_Id.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtShelve_Id.Location = new System.Drawing.Point(348, 15);
+            this.txtShelve_Id.Name = "txtShelve_Id";
+            this.txtShelve_Id.Size = new System.Drawing.Size(197, 20);
+            this.txtShelve_Id.TabIndex = 2;
+            // 
+            // txtShelve_Name
+            // 
+            this.txtShelve_Name.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtShelve_Name.Location = new System.Drawing.Point(348, 65);
+            this.txtShelve_Name.Name = "txtShelve_Name";
+            this.txtShelve_Name.Size = new System.Drawing.Size(197, 20);
+            this.txtShelve_Name.TabIndex = 3;
+            // 
+            // add
+            // 
+            this.add.Location = new System.Drawing.Point(380, 187);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 23);
+            this.add.TabIndex = 1;
+            this.add.Text = "Add";
+            this.add.UseVisualStyleBackColor = true;
+            // 
+            // update
+            // 
+            this.update.Location = new System.Drawing.Point(479, 187);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(75, 23);
+            this.update.TabIndex = 2;
+            this.update.Text = "Update";
+            this.update.UseVisualStyleBackColor = true;
+            // 
+            // delete
+            // 
+            this.delete.Location = new System.Drawing.Point(573, 187);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 23);
+            this.delete.TabIndex = 3;
+            this.delete.Text = "Delete";
+            this.delete.UseVisualStyleBackColor = true;
+            // 
+            // dgvShelve
+            // 
+            this.dgvShelve.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvShelve.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShelve.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ShelveId,
+            this.ShelveName});
+            this.dgvShelve.Location = new System.Drawing.Point(32, 234);
+            this.dgvShelve.Name = "dgvShelve";
+            this.dgvShelve.Size = new System.Drawing.Size(745, 204);
+            this.dgvShelve.TabIndex = 4;
+            // 
+            // ShelveId
+            // 
+            this.ShelveId.HeaderText = "Shelve Id";
+            this.ShelveId.Name = "ShelveId";
+            // 
+            // ShelveName
+            // 
+            this.ShelveName.HeaderText = "Shelve Name";
+            this.ShelveName.Name = "ShelveName";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(58, 192);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Search";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(123, 189);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // search
+            // 
+            this.search.Location = new System.Drawing.Point(253, 186);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(75, 23);
+            this.search.TabIndex = 7;
+            this.search.Text = "Search";
+            this.search.UseVisualStyleBackColor = true;
+            // 
+            // cancel
+            // 
+            this.cancel.Location = new System.Drawing.Point(665, 187);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(75, 23);
+            this.cancel.TabIndex = 8;
+            this.cancel.Text = "Cancel";
+            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
+            // 
+            // ManageShelves
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cancel);
+            this.Controls.Add(this.search);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dgvShelve);
+            this.Controls.Add(this.delete);
+            this.Controls.Add(this.update);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Name = "ManageShelves";
             this.Text = "ManageShelves";
+            this.Load += new System.EventHandler(this.ManageShelve_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShelve)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtShelve_Id;
+        private System.Windows.Forms.TextBox txtShelve_Name;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.DataGridView dgvShelve;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ShelveId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ShelveName;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button search;
+        private System.Windows.Forms.Button cancel;
     }
 }
