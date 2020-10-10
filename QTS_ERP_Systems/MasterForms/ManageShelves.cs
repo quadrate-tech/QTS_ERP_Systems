@@ -89,5 +89,12 @@ namespace QTS_ERP_Systems.MasterForms
             string SheSearch = txt_searchShelve.Text.Trim();
             dgvShelve.DataSource = db.FilterShelve(SheSearch);
         }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            db.DeleteShelve(Shelveid);
+            frmLoad();
+            ClearText();
+        }
     }
 }
