@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBank = new System.Windows.Forms.TextBox();
             this.txtSearchBank = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBank = new System.Windows.Forms.DataGridView();
             this.BanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bankname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.add = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.delete = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBank)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -93,17 +93,17 @@
             this.txtSearchBank.Size = new System.Drawing.Size(100, 20);
             this.txtSearchBank.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgvBank
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBank.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBank.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BanID,
             this.Bankname});
-            this.dataGridView1.Location = new System.Drawing.Point(23, 201);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(754, 237);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvBank.Location = new System.Drawing.Point(23, 201);
+            this.dgvBank.Name = "dgvBank";
+            this.dgvBank.Size = new System.Drawing.Size(754, 237);
+            this.dgvBank.TabIndex = 3;
             // 
             // BanID
             // 
@@ -159,6 +159,7 @@
             this.cancel.TabIndex = 8;
             this.cancel.Text = "Cancel";
             this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // bank
             // 
@@ -170,15 +171,16 @@
             this.Controls.Add(this.update);
             this.Controls.Add(this.save);
             this.Controls.Add(this.add);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvBank);
             this.Controls.Add(this.txtSearchBank);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "bank";
             this.Text = "bank";
+            this.Load += new System.EventHandler(this.ManageBank_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBank)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +193,7 @@
         private System.Windows.Forms.TextBox txtBank;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSearchBank;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBank;
         private System.Windows.Forms.DataGridViewTextBoxColumn BanID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Bankname;
         private System.Windows.Forms.Button add;
