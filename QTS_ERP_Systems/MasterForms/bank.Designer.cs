@@ -104,6 +104,7 @@
             this.dgvBank.Name = "dgvBank";
             this.dgvBank.Size = new System.Drawing.Size(754, 237);
             this.dgvBank.TabIndex = 3;
+            this.dgvBank.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellClick);
             // 
             // BanID
             // 
@@ -143,6 +144,7 @@
             this.update.TabIndex = 6;
             this.update.Text = "Update";
             this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // delete
             // 

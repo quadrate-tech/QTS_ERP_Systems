@@ -70,5 +70,20 @@ namespace QTS_ERP_Systems.MasterForms
             ClearText();
             frmLoad();
         }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            BankName = txtBank.Text.Trim();
+            db.UpdateBank(Collection, BankId, BankName);
+            ClearText();
+            frmLoad();
+        }
+
+        private void dgvEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            BankId = dgvBank.CurrentRow.Cells[0].Value.ToString();
+            txtBank.Text = dgvBank.CurrentRow.Cells[1].Value.ToString();
+            EnableTrue();
+        }
     }
 }
