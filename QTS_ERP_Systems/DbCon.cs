@@ -39,6 +39,12 @@ namespace QTS_ERP_Systems
             var Collection = db.GetCollection<T>(table);
             Collection.InsertOne(record);
         }
+
+        public void InsertShelve<T>(string table, T record)
+        {
+            var Collection = db.GetCollection<T>(table);
+            Collection.InsertOne(record);
+        }
         public void UpdateCategory(string table,string Id, string categoryName)
         {
             var collection = db.GetCollection<Category>(table);
@@ -77,6 +83,12 @@ namespace QTS_ERP_Systems
                                                   .Set("Email", Email)
                                                   .Set("ContactNo", Contact_No);
             Collection.UpdateOne(filter, update);
+        }
+        public void UpdateShelve(string table, string Shelve_Id, string Shelve_Name)
+        {
+            var Collection = db.GetCollection<Shelve>(table);
+            var filter = Builders<Shelve>.Filter.Eq("ShelveId", Shelve_Id);
+            var update = Builders<Shelve>.Update.Set("ShelveName", Shelve_Name);
         }
 
         public List<Employee> FilterEmployee(string EmpName)
@@ -172,6 +184,30 @@ namespace QTS_ERP_Systems
             }
         }
 
+        public List<Shelve> FilterShelve(string Shelve_Name)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(Shelve_Name))
+                {
+                    IMongoCollection<Shelve> Collection = db.GetCollection<Shelve>("Shelves");
+                    var result = Collection.AsQueryable().Where(u => u.ShelveName.Contains(Shelve_Name)).ToList();
+                    return result;
+                }
+                else
+                {
+                    IMongoCollection<Shelve> Collection = db.GetCollection<Shelve>("Shelves");
+                    var result = Collection.AsQueryable().ToList();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
+
         public void DeleteOne(string Id)
         {
             IMongoCollection<Category> collection = db.GetCollection<Category>("Category");
@@ -199,6 +235,12 @@ namespace QTS_ERP_Systems
         {
             IMongoCollection<Customer> collection = db.GetCollection<Customer>("Customers");
             collection.DeleteOne(a => a.CustomerId== Id);
+        }
+
+        public void DeleteShelve(string Id)
+        {
+            IMongoCollection<Shelve> collection = db.GetCollection<Shelve>("Shelves");
+            collection.DeleteOne(a => a.ShelveId == Id);
         }
     }
 }
