@@ -151,6 +151,30 @@ namespace QTS_ERP_Systems
             }
         }
 
+        public List<Bank> FilterBank(string BankName)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(BankName))
+                {
+                    IMongoCollection<Bank> Collection = db.GetCollection<Bank>("Bank");
+                    var result = Collection.AsQueryable().Where(u => u.bank_name.ToLower().Contains(BankName)).ToList();
+                    return result;
+                }
+                else
+                {
+                    IMongoCollection<Bank> Collection = db.GetCollection<Bank>("Bank");
+                    var result = Collection.AsQueryable().ToList();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
+
         public void DeleteOne(string Id)
         {
             IMongoCollection<Category> collection = db.GetCollection<Category>("Category");
@@ -173,6 +197,11 @@ namespace QTS_ERP_Systems
         {
             IMongoCollection<Employee> collection = db.GetCollection<Employee>("Employees");
             collection.DeleteOne(a => a.Employee_Id == Id);
+        }
+        public void DeleteBank(string Id)
+        {
+            IMongoCollection<Bank> collection = db.GetCollection<Bank>("Bank");
+            collection.DeleteOne(a => a.bank_id == Id);
         }
     }
 }
