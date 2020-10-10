@@ -91,5 +91,12 @@ namespace QTS_ERP_Systems.MasterForms
             string bank = txtSearchBank.Text.Trim();
             dgvBank.DataSource = db.FilterBank(bank);
         }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            db.DeleteBank(BankId);
+            ClearText();
+            frmLoad();
+        }
     }
 }
