@@ -14,8 +14,8 @@ namespace QTS_ERP_Systems.MasterForms
     public partial class ManageShelves : Form
     {
         readonly DbCon db = new DbCon();
-        private string ShelveId;
-        private string ShelveName;
+        private string Shelveid;
+        private string Shelvename;
         private readonly string Collection = "Shelves";
         public ManageShelves()
         {
@@ -67,6 +67,27 @@ namespace QTS_ERP_Systems.MasterForms
             db.InsertShelve(Collection, shelve);
             ClearText();
             frmLoad();
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            Shelvename = txtShelve_Name.Text.Trim();
+            db.UpdateShelve(Collection, Shelveid, Shelvename);
+            ClearText();
+            frmLoad();
+        }
+
+        private void dgvShelve_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Shelveid = dgvShelve.CurrentRow.Cells[0].Value.ToString();
+            txtShelve_Name.Text = dgvShelve.CurrentRow.Cells[1].Value.ToString();
+            EnableTrue();
+        }
+
+        private void txtSearchShelve_KeyUp(object sender, KeyEventArgs e)
+        {
+            string SheSearch = txt_searchShelve.Text.Trim();
+            dgvShelve.DataSource = db.FilterShelve(SheSearch);
         }
     }
 }

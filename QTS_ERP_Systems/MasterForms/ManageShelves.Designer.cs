@@ -38,7 +38,7 @@
             this.ShelveId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ShelveName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_searchShelve = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
@@ -97,6 +97,7 @@
             this.update.TabIndex = 2;
             this.update.Text = "Update";
             this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // delete
             // 
@@ -118,6 +119,7 @@
             this.dgvShelve.Name = "dgvShelve";
             this.dgvShelve.Size = new System.Drawing.Size(745, 259);
             this.dgvShelve.TabIndex = 4;
+            this.dgvShelve.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShelve_CellClick);
             // 
             // ShelveId
             // 
@@ -138,12 +140,13 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Search";
             // 
-            // textBox1
+            // txt_searchShelve
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 136);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.txt_searchShelve.Location = new System.Drawing.Point(123, 136);
+            this.txt_searchShelve.Name = "txt_searchShelve";
+            this.txt_searchShelve.Size = new System.Drawing.Size(100, 20);
+            this.txt_searchShelve.TabIndex = 6;
+            this.txt_searchShelve.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearchShelve_KeyUp);
             // 
             // search
             // 
@@ -182,7 +185,7 @@
             this.Controls.Add(this.save);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.search);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_searchShelve);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvShelve);
             this.Controls.Add(this.delete);
@@ -212,7 +215,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ShelveId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ShelveName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_searchShelve;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Button save;
