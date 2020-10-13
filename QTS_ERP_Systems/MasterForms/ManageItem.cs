@@ -90,10 +90,11 @@ namespace QTS_ERP_Systems.MasterForms
             //}
             //else
             {
+                Random rnd = new Random();
                 Item itm = new Item
                 {
-                    item_id = generateId( itemid),//txtItemNo.Text
-                    item_code = Convert.ToInt32(txtItemCode.Text.Trim()),
+                item_id = rnd.Next(),//generateId( itemid),//txtItemNo.Text
+                item_code = Convert.ToInt32(txtItemCode.Text.Trim()),
                     item_name = txtItemName.Text.Trim(),
                     printable_name = txtPrintName.Text.Trim(),
                     unit_type = txtUnitType.Text.Trim(),
@@ -160,8 +161,8 @@ namespace QTS_ERP_Systems.MasterForms
         //DELETE BUTTON 
         private void BTNDELETE_Click_1(object sender, EventArgs e)
         {
-            iTEMNo = txtItemNo.Text;
-            db.DeleteItem(iTEMNo);
+           // iTEMNo = txtItemNo.Text;
+            db.DeleteItem(itemid);
             ClearText();
             FormLoad();
             EnableTrue();

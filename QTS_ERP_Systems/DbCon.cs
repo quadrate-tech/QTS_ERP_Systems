@@ -57,10 +57,10 @@ namespace QTS_ERP_Systems
                                                 .Set("BankName", BankName);
             Collection.UpdateOne(filter, update);
         }
-        public void UpdateItem(string table, string ItmNo, int item_code, string item_name, string printable_name, string unit_type, int unit_cost, int selling_price, bool is_service)
+        public void UpdateItem(string table, string item_id, int item_code, string item_name, string printable_name, string unit_type, int unit_cost, int selling_price, bool is_service)
         {
             var Collection = db.GetCollection<Item>(table);
-            var filter = Builders<Item>.Filter.Eq("item_id", ItmNo);
+            var filter = Builders<Item>.Filter.Eq("item_id", item_id);
             var update = Builders<Item>.Update.Set("item_code", item_code)
                                                 .Set("item_name", item_name)
                                                 .Set("printable_name", printable_name)
