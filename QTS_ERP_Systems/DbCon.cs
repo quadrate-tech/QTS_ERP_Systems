@@ -202,10 +202,10 @@ namespace QTS_ERP_Systems
             collection.DeleteOne(a => a.Employee_Id == Id);
         }
 
-        public void DeleteItem(string Id)
+        public void DeleteItem(int Id)
         {
-            //IMongoCollection<Item> collection = db.GetCollection<Item>("Items");
-            //collection.DeleteOne(a => a.item_id == Id);
+            IMongoCollection<Item> collection = db.GetCollection<Item>("Items");
+            collection.DeleteOne(a => a.item_id == Id);
         }
     }
 }

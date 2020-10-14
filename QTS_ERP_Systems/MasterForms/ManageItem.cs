@@ -15,7 +15,7 @@ namespace QTS_ERP_Systems.MasterForms
         readonly DbCon db = new DbCon();
 
      
-        private int lastId;
+       
         private string itemId;
         private int itemCode;
         private string itemName;
@@ -40,7 +40,7 @@ namespace QTS_ERP_Systems.MasterForms
         }
         private void ClearText()
         {
-            txtItemNo.Clear();
+           // txtItemNo.Clear();
             txtItemCode.Clear();
             txtItemName.Clear();
             txtPrintName.Clear();
@@ -51,19 +51,18 @@ namespace QTS_ERP_Systems.MasterForms
         }
         private void EnableTrue()
         {
-            txtItemNo.Enabled = true;
+           // txtItemNo.Enabled = true;
             txtItemCode.Enabled = true;
             txtItemName.Enabled = true;
             txtPrintName.Enabled = true;
             txtUnitType.Enabled = true;
             txtUnitCost.Enabled = true;
-
             yesBtn.Checked = true;
             txtSellingPrice.Enabled = true;
         }
         private void EnableFalse()
         {
-            txtItemNo.Enabled = false;
+            //txtItemNo.Enabled = false;
             txtItemCode.Enabled = false;
             txtItemName.Enabled = false;
             txtPrintName.Enabled = false;
@@ -77,7 +76,7 @@ namespace QTS_ERP_Systems.MasterForms
         {
             EnableTrue();
             ClearText();
-            txtItemNo.Focus();
+            txtItemCode.Focus();
         }
         //SAVE BUTTON 
         private void BtnSave_Click_1(object sender, EventArgs e)
@@ -152,7 +151,7 @@ namespace QTS_ERP_Systems.MasterForms
         private void BtnDelete_Click_1(object sender, EventArgs e)
         {
         
-            db.DeleteItem(itemId);
+            db.DeleteItem(Convert.ToInt32(itemId));
             ClearText();
             FormLoad();
             EnableTrue();
