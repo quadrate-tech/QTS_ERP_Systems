@@ -162,10 +162,17 @@
     <Compile Include="MasterForms\ManageItem.Designer.cs">
       <DependentUpon>ManageItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="MasterForms\ManagePurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForms\ManagePurchaseOrder.Designer.cs">
+      <DependentUpon>ManagePurchaseOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Cheque.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\PurchaseOrder.cs" />
     <Compile Include="Model\RandomString.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
