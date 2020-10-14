@@ -167,6 +167,7 @@
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\RandomString.cs" />
+    <Compile Include="Model\Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main.resx">

@@ -39,6 +39,12 @@ namespace QTS_ERP_Systems
             var Collection = db.GetCollection<T>(table);
             Collection.InsertOne(record);
         }
+        public void InsertSupplier<T>(string table, T record)
+        {
+            var Collection = db.GetCollection<T>(table);
+            Collection.InsertOne(record);
+        }
+
         public void UpdateCategory(string table, string Id, string categoryName)
         {
             var collection = db.GetCollection<Category>(table);
@@ -82,7 +88,17 @@ namespace QTS_ERP_Systems
                                                   .Set("SecretCode", SecretCode);
             Collection.UpdateOne(filter, update);
         }
-
+        public void UpdateSupplier(string table, string SupplierId, string Name, int Contact, string Address, string Email, string PendingAmount)
+        {
+            var Collection = db.GetCollection<Supplier>(table);
+            var filter = Builders<Supplier>.Filter.Eq("SupplierId", SupplierId);
+            var update = Builders<Supplier>.Update.Set("Name", Name)
+                                                  .Set("Contact", Contact)
+                                                  .Set("Address", Address)
+                                                  .Set("Email", Email)
+                                                  .Set("PendingAmount", PendingAmount);
+            Collection.UpdateOne(filter, update);
+        }
 
         public List<Employee> FilterEmployee(string EmpName)
         {
@@ -178,6 +194,29 @@ namespace QTS_ERP_Systems
                 throw;
             }
         }
+        public List<Supplier> FilterSupplier(string SupId)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(SupId))
+                {
+                    IMongoCollection<Supplier> Collection = db.GetCollection<Supplier>("Suppliers");
+                    var result = Collection.AsQueryable().Where(u => u.Name.ToLower().Contains(SupId)).ToList();//
+                    return result;
+                }
+                else
+                {
+                    IMongoCollection<Supplier> Collection = db.GetCollection<Supplier>("SupplierIds");
+                    var result = Collection.AsQueryable().ToList();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
         public void DeleteOne(string Id)
         {
             IMongoCollection<Category> collection = db.GetCollection<Category>("Category");
@@ -206,6 +245,11 @@ namespace QTS_ERP_Systems
         {
             IMongoCollection<Item> collection = db.GetCollection<Item>("Items");
             collection.DeleteOne(a => a.item_id == Id);
+        }
+        public void DeleteSupplier(int Id)
+        {
+            IMongoCollection<Supplier> collection = db.GetCollection<Supplier>("Suppliers");
+            collection.DeleteOne(a => a.SupplierId == Id);
         }
     }
 }
