@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.BTNCANEL = new System.Windows.Forms.Button();
             this.BTNDELETE = new System.Windows.Forms.Button();
             this.BTNUPDATE = new System.Windows.Forms.Button();
-            this.BTNSAVE = new System.Windows.Forms.Button();
+            this.BtnSave = new System.Windows.Forms.Button();
             this.BTNADD = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.txtUnitType = new System.Windows.Forms.TextBox();
             this.txtPrintName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.yesbtn = new System.Windows.Forms.RadioButton();
+            this.yesBtn = new System.Windows.Forms.RadioButton();
             this.txtItemNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtItemName = new System.Windows.Forms.TextBox();
@@ -76,9 +76,9 @@
             this.tableLayoutPanel4.Controls.Add(this.BTNCANEL, 4, 0);
             this.tableLayoutPanel4.Controls.Add(this.BTNDELETE, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.BTNUPDATE, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.BTNSAVE, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.BtnSave, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.BTNADD, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(424, 395);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(428, 395);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -94,7 +94,7 @@
             this.BTNCANEL.TabIndex = 4;
             this.BTNCANEL.Text = "CANCEL";
             this.BTNCANEL.UseVisualStyleBackColor = true;
-            this.BTNCANEL.Click += new System.EventHandler(this.BTNCANEL_Click);
+            this.BTNCANEL.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // BTNDELETE
             // 
@@ -105,7 +105,7 @@
             this.BTNDELETE.TabIndex = 3;
             this.BTNDELETE.Text = "DELETE";
             this.BTNDELETE.UseVisualStyleBackColor = true;
-            this.BTNDELETE.Click += new System.EventHandler(this.BTNDELETE_Click_1);
+            this.BTNDELETE.Click += new System.EventHandler(this.BtnDelete_Click_1);
             // 
             // BTNUPDATE
             // 
@@ -116,18 +116,18 @@
             this.BTNUPDATE.TabIndex = 2;
             this.BTNUPDATE.Text = "UPDATE";
             this.BTNUPDATE.UseVisualStyleBackColor = true;
-            this.BTNUPDATE.Click += new System.EventHandler(this.BTNUPDATE_Click_1);
+            this.BTNUPDATE.Click += new System.EventHandler(this.BtnUpdate_Click_1);
             // 
-            // BTNSAVE
+            // BtnSave
             // 
-            this.BTNSAVE.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNSAVE.Location = new System.Drawing.Point(73, 3);
-            this.BTNSAVE.Name = "BTNSAVE";
-            this.BTNSAVE.Size = new System.Drawing.Size(69, 63);
-            this.BTNSAVE.TabIndex = 1;
-            this.BTNSAVE.Text = "SAVE";
-            this.BTNSAVE.UseVisualStyleBackColor = true;
-            this.BTNSAVE.Click += new System.EventHandler(this.BTNSAVE_Click_1);
+            this.BtnSave.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSave.Location = new System.Drawing.Point(73, 3);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(69, 63);
+            this.BtnSave.TabIndex = 1;
+            this.BtnSave.Text = "SAVE";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click_1);
             // 
             // BTNADD
             // 
@@ -138,7 +138,7 @@
             this.BTNADD.TabIndex = 0;
             this.BTNADD.Text = "ADD";
             this.BTNADD.UseVisualStyleBackColor = true;
-            this.BTNADD.Click += new System.EventHandler(this.BTNADD_Click_1);
+            this.BTNADD.Click += new System.EventHandler(this.BtnAdd_Click1);
             // 
             // tableLayoutPanel5
             // 
@@ -176,7 +176,7 @@
             this.txtSearchItem.Size = new System.Drawing.Size(238, 26);
             this.txtSearchItem.TabIndex = 15;
             this.txtSearchItem.TabStop = false;
-            this.txtSearchItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchItem_keypress);
+            this.txtSearchItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSearchItem_keypress);
             this.txtSearchItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearchItem_keyup);
             // 
             // tableLayoutPanel2
@@ -196,11 +196,11 @@
             this.tableLayoutPanel2.Controls.Add(this.txtUnitType, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.txtPrintName, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.yesbtn, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.yesBtn, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.txtItemNo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtItemName, 1, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(424, 42);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(428, 42);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 8;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
@@ -224,7 +224,7 @@
             this.txtSellingPrice.Size = new System.Drawing.Size(241, 26);
             this.txtSellingPrice.TabIndex = 10;
             this.txtSellingPrice.TabStop = false;
-            this.txtSellingPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSellingPrice_keyPress);
+            this.txtSellingPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSellingPrice_KeyPress);
             // 
             // label5
             // 
@@ -246,7 +246,7 @@
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.Size = new System.Drawing.Size(241, 26);
             this.txtItemCode.TabIndex = 1;
-            this.txtItemCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemCode_keyPress);
+            this.txtItemCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtItemCode_KeyPress);
             // 
             // label6
             // 
@@ -316,7 +316,7 @@
             this.txtUnitCost.Name = "txtUnitCost";
             this.txtUnitCost.Size = new System.Drawing.Size(241, 26);
             this.txtUnitCost.TabIndex = 5;
-            this.txtUnitCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitCost_keyPress);
+            this.txtUnitCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUnitCost_KeyPress);
             // 
             // txtUnitType
             // 
@@ -349,19 +349,19 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Unit Type";
             // 
-            // yesbtn
+            // yesBtn
             // 
-            this.yesbtn.AutoSize = true;
-            this.yesbtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.yesbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.yesbtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.yesbtn.Location = new System.Drawing.Point(155, 269);
-            this.yesbtn.Name = "yesbtn";
-            this.yesbtn.Size = new System.Drawing.Size(123, 24);
-            this.yesbtn.TabIndex = 11;
-            this.yesbtn.TabStop = true;
-            this.yesbtn.Text = "Click If Yes ";
-            this.yesbtn.UseVisualStyleBackColor = false;
+            this.yesBtn.AutoSize = true;
+            this.yesBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.yesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.yesBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.yesBtn.Location = new System.Drawing.Point(155, 269);
+            this.yesBtn.Name = "yesBtn";
+            this.yesBtn.Size = new System.Drawing.Size(123, 24);
+            this.yesBtn.TabIndex = 11;
+            this.yesBtn.TabStop = true;
+            this.yesBtn.Text = "Click If Yes ";
+            this.yesBtn.UseVisualStyleBackColor = false;
             // 
             // txtItemNo
             // 
@@ -396,30 +396,30 @@
             // dgvItem
             // 
             this.dgvItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItem.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItem.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvItem.Location = new System.Drawing.Point(3, 42);
             this.dgvItem.Name = "dgvItem";
-            this.dgvItem.Size = new System.Drawing.Size(415, 347);
+            this.dgvItem.Size = new System.Drawing.Size(419, 347);
             this.dgvItem.TabIndex = 3;
             this.dgvItem.TabStop = false;
-            this.dgvItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellClick);
+            this.dgvItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvItem_CellClick);
             // 
             // tableLayoutPanel1
             // 
@@ -442,14 +442,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(826, 479);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(834, 479);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // ManageItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 479);
+            this.ClientSize = new System.Drawing.Size(834, 479);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ManageItem";
             this.Text = "ManageItem";
@@ -487,13 +487,13 @@
         private System.Windows.Forms.TextBox txtUnitType;
         private System.Windows.Forms.TextBox txtPrintName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton yesbtn;
+        private System.Windows.Forms.RadioButton yesBtn;
         private System.Windows.Forms.DataGridView dgvItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button BTNCANEL;
         private System.Windows.Forms.Button BTNDELETE;
         private System.Windows.Forms.Button BTNUPDATE;
-        private System.Windows.Forms.Button BTNSAVE;
+        private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BTNADD;
     }
 }
