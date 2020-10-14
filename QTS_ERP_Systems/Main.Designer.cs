@@ -112,6 +112,7 @@
             this.manageSuppliersToolStripMenuItem.Name = "manageSuppliersToolStripMenuItem";
             this.manageSuppliersToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.manageSuppliersToolStripMenuItem.Text = "Manage Suppliers";
+            this.manageSuppliersToolStripMenuItem.Click += new System.EventHandler(this.manageSuppliersToolStripMenuItem_Click);
             // 
             // manageGRNToolStripMenuItem
             // 

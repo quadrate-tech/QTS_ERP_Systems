@@ -88,7 +88,7 @@ namespace QTS_ERP_Systems
                                                   .Set("SecretCode", SecretCode);
             Collection.UpdateOne(filter, update);
         }
-        public void UpdateSupplier(string table, string SupplierId, string Name, int Contact, string Address, string Email, string PendingAmount)
+        public void UpdateSupplier(string table, int SupplierId, string Name, string Contact, string Address, string Email, float PendingAmount)
         {
             var Collection = db.GetCollection<Supplier>(table);
             var filter = Builders<Supplier>.Filter.Eq("SupplierId", SupplierId);
@@ -206,7 +206,7 @@ namespace QTS_ERP_Systems
                 }
                 else
                 {
-                    IMongoCollection<Supplier> Collection = db.GetCollection<Supplier>("SupplierIds");
+                    IMongoCollection<Supplier> Collection = db.GetCollection<Supplier>("Suppliers");
                     var result = Collection.AsQueryable().ToList();
                     return result;
                 }

@@ -87,5 +87,22 @@ namespace QTS_ERP_Systems
             };
             mngItm.Show();
         }
+
+        private void manageSuppliersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(ManageSupplier))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            ManageSupplier mngSup = new ManageSupplier
+            {
+                MdiParent = this
+            };
+            mngSup.Show();
+        }
     }
 }

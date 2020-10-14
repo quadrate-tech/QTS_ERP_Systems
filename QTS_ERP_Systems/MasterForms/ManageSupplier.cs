@@ -13,6 +13,15 @@ namespace QTS_ERP_Systems.MasterForms
     public partial class ManageSupplier : Form
     {
         readonly DbCon db = new DbCon();
+        private readonly string Collection = "Suppliers";
+
+        private int supplierId_;
+        private string name_;
+        private string contact_;
+        private string address_;
+        private string email_;
+        private float pendingAmount_;
+
         public ManageSupplier()
         {
             InitializeComponent();
@@ -24,8 +33,8 @@ namespace QTS_ERP_Systems.MasterForms
         }
         public void FormLoad()
         {
-            dgvItem.DataSource = db.FilterSupplier("");
-            dgvItem.Columns[0].Visible = false;
+            dgvSupplier.DataSource = db.FilterSupplier("");
+            dgvSupplier.Columns[0].Visible = false;
         }
 
         private void ClearText()
@@ -40,6 +49,7 @@ namespace QTS_ERP_Systems.MasterForms
             txtSupplierName.Enabled = true;
             txtSupplierContact.Enabled = true;
             txtSupplierAddress.Enabled = true;
+            supplierEmail.Enabled = true;
             txtOpeningBalance.Enabled = true;
         }
         private void EnableFalse()
@@ -47,6 +57,7 @@ namespace QTS_ERP_Systems.MasterForms
             txtSupplierName.Enabled = false;
             txtSupplierContact.Enabled = false;
             txtSupplierAddress.Enabled = false;
+            supplierEmail.Enabled = false;
             txtOpeningBalance.Enabled = false;
         }
 
@@ -59,7 +70,56 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            Random suply = new Random();
+            Random rnd = new Random();
+            Supplier supl = new Supplier {
+            SupplierId= rnd.Next(),
+                Name = txtSupplierName.Text.Trim(),
+                Contact = txtSupplierContact.Text.Trim(),
+                Address = txtSupplierAddress.Text.Trim(),
+                Email= supplierEmail.Text.Trim(),
+                PendingAmount = float.Parse(txtOpeningBalance.Text.Trim()),
+            };
+            db.InsertSupplier(Collection, supl);
+            ClearText();
+            FormLoad();
+        }
+
+        private void BTNUPDATE_Click(object sender, EventArgs e)
+        {
+
+            name_ = txtSupplierName.Text.Trim();
+            contact_ = txtSupplierContact.Text.Trim();
+            address_ = txtSupplierAddress.Text.Trim();
+            email_ = supplierEmail.Text.Trim();
+            pendingAmount_ = float.Parse(txtOpeningBalance.Text.Trim());
+            db.UpdateSupplier(Collection, supplierId_, name_, contact_, address_, email_, pendingAmount_);
+            ClearText();
+            FormLoad();
+        }
+
+        private void BTNDELETE_Click(object sender, EventArgs e)
+        {
+            db.DeleteSupplier(supplierId_);
+            ClearText();
+            FormLoad();
+            EnableTrue();
+        }
+
+        private void BTNCANEL_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            EnableFalse();
+        }
+
+        private void _CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            supplierId_ = (int)dgvSupplier.CurrentRow.Cells[0].Value;
+            name_ = (string)dgvSupplier.CurrentRow.Cells[1].Value;
+            contact_ = (string)dgvSupplier.CurrentRow.Cells[2].Value;
+            address_ = (string)dgvSupplier.CurrentRow.Cells[3].Value;
+            email_ = (string)dgvSupplier.CurrentRow.Cells[4].Value;
+            pendingAmount_ = (int)dgvSupplier.CurrentRow.Cells[5].Value;
+            EnableTrue();
         }
     }
 
