@@ -82,7 +82,7 @@ namespace QTS_ERP_Systems.MasterForms
         private void BtnSave_Click_1(object sender, EventArgs e)
         {
           
-            {
+            
                 Random rnd = new Random();
                 Item itm = new Item
                 {
@@ -100,7 +100,7 @@ namespace QTS_ERP_Systems.MasterForms
                 ClearText();
                 FormLoad();
 
-            }
+            
         }
         
         private bool Service()

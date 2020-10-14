@@ -56,6 +56,11 @@ namespace QTS_ERP_Systems.MasterForms
             ClearText();
             txtSupplierName.Focus();
         }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            Random suply = new Random();
+        }
     }
 
 
