@@ -111,7 +111,7 @@ namespace QTS_ERP_Systems.MasterForms
             EnableFalse();
         }
 
-        private void _CellClick(object sender, DataGridViewCellEventArgs e)
+        private void Supplier_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             supplierId_ = (int)dgvSupplier.CurrentRow.Cells[0].Value;
             name_ = (string)dgvSupplier.CurrentRow.Cells[1].Value;

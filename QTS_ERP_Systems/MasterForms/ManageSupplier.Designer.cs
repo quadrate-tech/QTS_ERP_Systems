@@ -109,7 +109,7 @@
             this.dgvSupplier.Size = new System.Drawing.Size(457, 318);
             this.dgvSupplier.TabIndex = 3;
             this.dgvSupplier.TabStop = false;
-            this.dgvSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._CellClick);
+            this.dgvSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Supplier_CellClick);
             // 
             // tableLayoutPanel5
             // 
