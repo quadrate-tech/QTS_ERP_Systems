@@ -63,20 +63,7 @@ namespace QTS_ERP_Systems
                                                 .Set("BankName", BankName);
             Collection.UpdateOne(filter, update);
         }
-        public void UpdateItem(string table, string item_id, int item_code, string item_name, string printable_name, string unit_type, int unit_cost, int selling_price, bool is_service)
-        {
-            var Collection = db.GetCollection<Item>(table);
-            var filter = Builders<Item>.Filter.Eq("item_id", item_id);
-            var update = Builders<Item>.Update.Set("item_code", item_code)
-                                                .Set("item_name", item_name)
-                                                .Set("printable_name", printable_name)
-                                                .Set("unit_type", unit_type)
-                                                .Set("unit_cost", unit_cost)
-                                                .Set("unit_cost", selling_price)
-                                                .Set("unit_cost", is_service);
-
-            Collection.UpdateOne(filter, update);
-        }
+       
         public void UpdateEmployee(string table, string Employee_Id, string Employee_Name, int Contact_No, string Address, string Email, string SecretCode)
         {
             var Collection = db.GetCollection<Employee>(table);
@@ -171,29 +158,6 @@ namespace QTS_ERP_Systems
         }
 
 
-        public List<Item> FilterItem(string ItNo)
-        {
-            try
-            {
-                if (!string.IsNullOrEmpty(ItNo))
-                {
-                    IMongoCollection<Item> Collection = db.GetCollection<Item>("Items");
-                    var result = Collection.AsQueryable().Where(u => u.item_name.ToLower().Contains(ItNo)).ToList();//
-                    return result;
-                }
-                else
-                {
-                    IMongoCollection<Item> Collection = db.GetCollection<Item>("Items");
-                    var result = Collection.AsQueryable().ToList();
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw;
-            }
-        }
         public List<Supplier> FilterSupplier(string SupId)
         {
             try
@@ -241,11 +205,7 @@ namespace QTS_ERP_Systems
             collection.DeleteOne(a => a.Employee_Id == Id);
         }
 
-        public void DeleteItem(int Id)
-        {
-            IMongoCollection<Item> collection = db.GetCollection<Item>("Items");
-            collection.DeleteOne(a => a.item_id == Id);
-        }
+       
         public void DeleteSupplier(int Id)
         {
             IMongoCollection<Supplier> collection = db.GetCollection<Supplier>("Suppliers");

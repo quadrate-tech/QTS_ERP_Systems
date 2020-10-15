@@ -34,7 +34,7 @@
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtSearchItem = new System.Windows.Forms.TextBox();
+            this.txtSearchISupply = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSupplierName = new System.Windows.Forms.TextBox();
@@ -117,7 +117,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.44578F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.55422F));
             this.tableLayoutPanel5.Controls.Add(this.label10, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.txtSearchItem, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtSearchISupply, 1, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
@@ -138,21 +138,22 @@
             this.label10.TabIndex = 16;
             this.label10.Text = "Search Suppliers";
             // 
-            // txtSearchItem
+            // txtSearchISupply
             // 
-            this.txtSearchItem.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchItem.Location = new System.Drawing.Point(169, 3);
-            this.txtSearchItem.Name = "txtSearchItem";
-            this.txtSearchItem.Size = new System.Drawing.Size(230, 26);
-            this.txtSearchItem.TabIndex = 15;
-            this.txtSearchItem.TabStop = false;
+            this.txtSearchISupply.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtSearchISupply.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchISupply.Location = new System.Drawing.Point(169, 3);
+            this.txtSearchISupply.Name = "txtSearchISupply";
+            this.txtSearchISupply.Size = new System.Drawing.Size(230, 26);
+            this.txtSearchISupply.TabIndex = 15;
+            this.txtSearchISupply.TabStop = false;
+            this.txtSearchISupply.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearchISupply_KeyUp);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.32628F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.67371F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.09668F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.90332F));
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtSupplierName, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 1);
@@ -181,7 +182,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(23, 5);
+            this.label5.Location = new System.Drawing.Point(9, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 40);
             this.label5.TabIndex = 5;
@@ -191,9 +192,9 @@
             // 
             this.txtSupplierName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupplierName.Location = new System.Drawing.Point(109, 12);
+            this.txtSupplierName.Location = new System.Drawing.Point(95, 12);
             this.txtSupplierName.Name = "txtSupplierName";
-            this.txtSupplierName.Size = new System.Drawing.Size(219, 26);
+            this.txtSupplierName.Size = new System.Drawing.Size(233, 26);
             this.txtSupplierName.TabIndex = 1;
             this.txtSupplierName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierName_KeyPress);
             // 
@@ -203,7 +204,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(31, 65);
+            this.label6.Location = new System.Drawing.Point(17, 65);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 6;
@@ -215,7 +216,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(22, 253);
+            this.label7.Location = new System.Drawing.Point(8, 253);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 40);
             this.label7.TabIndex = 7;
@@ -227,7 +228,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(28, 120);
+            this.label4.Location = new System.Drawing.Point(14, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 20);
             this.label4.TabIndex = 4;
@@ -237,9 +238,9 @@
             // 
             this.txtOpeningBalance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOpeningBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOpeningBalance.Location = new System.Drawing.Point(109, 260);
+            this.txtOpeningBalance.Location = new System.Drawing.Point(95, 260);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
-            this.txtOpeningBalance.Size = new System.Drawing.Size(219, 26);
+            this.txtOpeningBalance.Size = new System.Drawing.Size(233, 26);
             this.txtOpeningBalance.TabIndex = 5;
             this.txtOpeningBalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpeningBalance_KeyPress);
             // 
@@ -247,21 +248,20 @@
             // 
             this.supplierEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.supplierEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplierEmail.Location = new System.Drawing.Point(109, 182);
+            this.supplierEmail.Location = new System.Drawing.Point(95, 182);
             this.supplierEmail.Name = "supplierEmail";
-            this.supplierEmail.Size = new System.Drawing.Size(219, 26);
+            this.supplierEmail.Size = new System.Drawing.Size(233, 26);
             this.supplierEmail.TabIndex = 4;
             // 
             // txtSupplierAddress
             // 
             this.txtSupplierAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSupplierAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupplierAddress.Location = new System.Drawing.Point(109, 117);
+            this.txtSupplierAddress.Location = new System.Drawing.Point(95, 117);
             this.txtSupplierAddress.Name = "txtSupplierAddress";
             this.txtSupplierAddress.Size = new System.Drawing.Size(219, 26);
             this.txtSupplierAddress.TabIndex = 1;
             this.txtSupplierAddress.TabStop = false;
-            this.txtSupplierAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierAddress_KeyPress);
             // 
             // label3
             // 
@@ -269,7 +269,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(50, 185);
+            this.label3.Location = new System.Drawing.Point(36, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 3;
@@ -279,11 +279,10 @@
             // 
             this.txtSupplierContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSupplierContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupplierContact.Location = new System.Drawing.Point(109, 62);
+            this.txtSupplierContact.Location = new System.Drawing.Point(95, 62);
             this.txtSupplierContact.Name = "txtSupplierContact";
-            this.txtSupplierContact.Size = new System.Drawing.Size(219, 26);
+            this.txtSupplierContact.Size = new System.Drawing.Size(233, 26);
             this.txtSupplierContact.TabIndex = 2;
-            this.txtSupplierContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierContact_KeyPress);
             // 
             // tableLayoutPanel4
             // 
@@ -386,7 +385,7 @@
         private System.Windows.Forms.DataGridView dgvSupplier;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtSearchItem;
+        private System.Windows.Forms.TextBox txtSearchISupply;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSupplierName;

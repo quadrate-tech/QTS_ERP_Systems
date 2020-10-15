@@ -71,22 +71,7 @@ namespace QTS_ERP_Systems
 
         }
 
-        private void ManageItemsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form.GetType() == typeof(ManageItem))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-            ManageItem mngItm = new ManageItem
-            {
-                MdiParent = this
-            };
-            mngItm.Show();
-        }
+       
 
         private void manageSuppliersToolStripMenuItem_Click(object sender, EventArgs e)
         {
