@@ -144,8 +144,8 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void txtSearchISupply_KeyUp(object sender, KeyEventArgs e)
         {
-            string supl = txtSearchISupply.Text.Trim();
-            dgvSupplier.DataSource = db.FilterSupplier(supl);
+            string suplSearch = txtSearchISupply.Text.Trim();
+            dgvSupplier.DataSource = db.FilterSupplier(suplSearch);
         }
     }
 
