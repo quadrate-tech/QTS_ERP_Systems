@@ -43,6 +43,7 @@ namespace QTS_ERP_Systems.MasterForms
             txtSupplierContact.Clear();
             txtSupplierAddress.Clear();
             txtOpeningBalance.Clear();
+            supplierEmail.Clear();
         }
         private void EnableTrue()
         {
