@@ -143,8 +143,8 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void txtSearchItem_keyup(object sender, KeyEventArgs e)
         {
-            string IEM = txtSearchItem.Text.Trim();
-            dgvItem.DataSource = db.FilterItem(IEM);
+            string iem = txtSearchItem.Text.Trim();
+            dgvItem.DataSource = db.FilterItem(iem);
 
         }
         //DELETE BUTTON 
