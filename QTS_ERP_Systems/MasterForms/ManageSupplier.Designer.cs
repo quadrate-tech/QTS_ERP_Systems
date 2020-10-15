@@ -195,6 +195,7 @@
             this.txtSupplierName.Name = "txtSupplierName";
             this.txtSupplierName.Size = new System.Drawing.Size(219, 26);
             this.txtSupplierName.TabIndex = 1;
+            this.txtSupplierName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierName_KeyPress);
             // 
             // label6
             // 
@@ -240,6 +241,7 @@
             this.txtOpeningBalance.Name = "txtOpeningBalance";
             this.txtOpeningBalance.Size = new System.Drawing.Size(219, 26);
             this.txtOpeningBalance.TabIndex = 5;
+            this.txtOpeningBalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpeningBalance_KeyPress);
             // 
             // supplierEmail
             // 
@@ -259,6 +261,7 @@
             this.txtSupplierAddress.Size = new System.Drawing.Size(219, 26);
             this.txtSupplierAddress.TabIndex = 1;
             this.txtSupplierAddress.TabStop = false;
+            this.txtSupplierAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierAddress_KeyPress);
             // 
             // label3
             // 
@@ -280,6 +283,7 @@
             this.txtSupplierContact.Name = "txtSupplierContact";
             this.txtSupplierContact.Size = new System.Drawing.Size(219, 26);
             this.txtSupplierContact.TabIndex = 2;
+            this.txtSupplierContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierContact_KeyPress);
             // 
             // tableLayoutPanel4
             // 
