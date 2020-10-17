@@ -45,6 +45,11 @@ namespace QTS_ERP_Systems
             var Collection = db.GetCollection<T>(table);
             Collection.InsertOne(record);
         }
+        public void InsertVehicle<T>(string table, T record)
+        {
+            var Collection = db.GetCollection<T>(table);
+            Collection.InsertOne(record);
+        }
         public void UpdateCategory(string table,string Id, string categoryName)
         {
             var collection = db.GetCollection<Category>(table);
@@ -90,7 +95,18 @@ namespace QTS_ERP_Systems
             var filter = Builders<Shelve>.Filter.Eq("ShelveId", Shelve_Id);
             var update = Builders<Shelve>.Update.Set("ShelveName", Shelve_Name);
         }
-
+        public void UpdateVehicle(string table, string VehicleNo, string Brand, string Model, string Type, int CurrentMileage, int ServiceMileageDue, DateTime AddedDate)
+        {
+            var Collection = db.GetCollection<Vehicle>(table);
+            var filter = Builders<Vehicle>.Filter.Eq("vehicle_no", VehicleNo);
+            var update = Builders<Vehicle>.Update.Set("brand", Brand)
+                                                  .Set("model", Model)
+                                                  .Set("type", Type)
+                                                  .Set("current_mileage", CurrentMileage)
+                                                  .Set("service_mileage_due", ServiceMileageDue)
+                                                  .Set("added_date", AddedDate);
+            Collection.UpdateOne(filter, update);
+        }
         public List<Employee> FilterEmployee(string EmpName)
         {
             try
@@ -207,6 +223,30 @@ namespace QTS_ERP_Systems
                 throw;
             }
         }
+        public List<Vehicle> FilterVehicle(string VehicleNo)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(VehicleNo))
+                {
+                    IMongoCollection<Vehicle> Collection = db.GetCollection<Vehicle>("Vehicle");
+                    var result = Collection.AsQueryable().Where(u => u.vehicle_no.ToLower().Contains(VehicleNo)).ToList();
+                    return result;
+                }
+                else
+                {
+                    IMongoCollection<Vehicle> Collection = db.GetCollection<Vehicle>("Vehicle");
+                    var result = Collection.AsQueryable().ToList();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
+
 
         public void DeleteOne(string Id)
         {
@@ -241,6 +281,17 @@ namespace QTS_ERP_Systems
         {
             IMongoCollection<Shelve> collection = db.GetCollection<Shelve>("Shelves");
             collection.DeleteOne(a => a.ShelveId == Id);
+        }
+        public void DeleteVehicle(string VehicleNo)
+        {
+            IMongoCollection<Vehicle> collection = db.GetCollection<Vehicle>("Vehicle");
+            collection.DeleteOne(a => a.vehicle_no == VehicleNo);
+        }
+        public bool CheckVehicleNo(string VehicleNo)
+        {
+            IMongoCollection<Vehicle> Collection = db.GetCollection<Vehicle>("Vehicle");
+            var Check = Collection.AsQueryable().Any(u => u.vehicle_no == VehicleNo);
+            return Check;
         }
     }
 }

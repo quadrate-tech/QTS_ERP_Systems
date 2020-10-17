@@ -81,5 +81,23 @@ namespace QTS_ERP_Systems
             };
             manageCustomers.Show();
         }
+
+        private void manageVehiclesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(ManageVehicle))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            ManageVehicle manageVehicles = new ManageVehicle
+            {
+                MdiParent = this
+            };
+            manageVehicles.Show();
+        }
     }
 }

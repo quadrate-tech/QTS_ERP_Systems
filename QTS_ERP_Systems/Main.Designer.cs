@@ -49,6 +49,7 @@
             this.pOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageVehiclesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,8 @@
             this.manageShelvesToolStripMenuItem,
             this.manageBusinessInfoToolStripMenuItem,
             this.manageBankToolStripMenuItem,
-            this.purchaseOrderToolStripMenuItem});
+            this.purchaseOrderToolStripMenuItem,
+            this.manageVehiclesToolStripMenuItem});
             this.masterFormsToolStripMenuItem.Name = "masterFormsToolStripMenuItem";
             this.masterFormsToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.masterFormsToolStripMenuItem.Text = "Master Forms";
@@ -167,25 +169,25 @@
             // gRNInvoicesToolStripMenuItem
             // 
             this.gRNInvoicesToolStripMenuItem.Name = "gRNInvoicesToolStripMenuItem";
-            this.gRNInvoicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gRNInvoicesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.gRNInvoicesToolStripMenuItem.Text = "GRN Invoices";
             // 
             // receiptsToolStripMenuItem
             // 
             this.receiptsToolStripMenuItem.Name = "receiptsToolStripMenuItem";
-            this.receiptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.receiptsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.receiptsToolStripMenuItem.Text = "Receipts";
             // 
             // voidReceiptsToolStripMenuItem
             // 
             this.voidReceiptsToolStripMenuItem.Name = "voidReceiptsToolStripMenuItem";
-            this.voidReceiptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.voidReceiptsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.voidReceiptsToolStripMenuItem.Text = "Void Receipts";
             // 
             // pendingReceiptsToolStripMenuItem
             // 
             this.pendingReceiptsToolStripMenuItem.Name = "pendingReceiptsToolStripMenuItem";
-            this.pendingReceiptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pendingReceiptsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.pendingReceiptsToolStripMenuItem.Text = "Pending Receipts";
             // 
             // pOSToolStripMenuItem
@@ -205,8 +207,15 @@
             // configsToolStripMenuItem
             // 
             this.configsToolStripMenuItem.Name = "configsToolStripMenuItem";
-            this.configsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configsToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.configsToolStripMenuItem.Text = "Configs";
+            // 
+            // manageVehiclesToolStripMenuItem
+            // 
+            this.manageVehiclesToolStripMenuItem.Name = "manageVehiclesToolStripMenuItem";
+            this.manageVehiclesToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.manageVehiclesToolStripMenuItem.Text = "Manage Vehicles";
+            this.manageVehiclesToolStripMenuItem.Click += new System.EventHandler(this.manageVehiclesToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -251,6 +260,7 @@
         private System.Windows.Forms.ToolStripMenuItem pOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageVehiclesToolStripMenuItem;
     }
 }
 
