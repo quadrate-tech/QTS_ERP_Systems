@@ -138,6 +138,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="MasterForms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="MasterForms\ManageCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,15 +168,20 @@
     <Compile Include="MasterForms\ManageSupplier.Designer.cs">
       <DependentUpon>ManageSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\BillingContext.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Cheque.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\OrderedItem.cs" />
     <Compile Include="Model\RandomString.cs" />
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForms\ManageCategory.resx">
       <DependentUpon>ManageCategory.cs</DependentUpon>
