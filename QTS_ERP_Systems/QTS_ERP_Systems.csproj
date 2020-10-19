@@ -185,11 +185,11 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasterForms\BusinessInfo.cs">
+    <Compile Include="MasterForms\ManageBusinessInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterForms\BusinessInfo.Designer.cs">
-      <DependentUpon>BusinessInfo.cs</DependentUpon>
+    <Compile Include="MasterForms\ManageBusinessInfo.designer.cs">
+      <DependentUpon>ManageBusinessInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="MasterForms\ManageCategory.cs">
       <SubType>Form</SubType>
@@ -232,8 +232,8 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasterForms\BusinessInfo.resx">
-      <DependentUpon>BusinessInfo.cs</DependentUpon>
+    <EmbeddedResource Include="MasterForms\ManageBusinessInfo.resx">
+      <DependentUpon>ManageBusinessInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForms\ManageCategory.resx">
       <DependentUpon>ManageCategory.cs</DependentUpon>
