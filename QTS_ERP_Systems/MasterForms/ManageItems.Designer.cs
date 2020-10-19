@@ -164,6 +164,7 @@
             this.CmbCategories.Name = "CmbCategories";
             this.CmbCategories.Size = new System.Drawing.Size(318, 28);
             this.CmbCategories.TabIndex = 10;
+            this.CmbCategories.SelectedIndexChanged += new System.EventHandler(this.CmbCategories_SelectedIndexChanged);
             // 
             // CmbShelf
             // 

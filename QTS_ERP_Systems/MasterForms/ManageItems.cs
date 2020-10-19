@@ -59,5 +59,10 @@ namespace QTS_ERP_Systems.MasterForms
             PanelCRUD.Enabled = false;
             BtnCancel.Enabled = false;
         }
+
+        private void CmbCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/QTS_ERP_Systems/MasterForms/BusinessInfo.cs
+/QTS_ERP_Systems/MasterForms/BusinessInfo.Designer.cs
+/QTS_ERP_Systems/MasterForms/BusinessInfo.resx
