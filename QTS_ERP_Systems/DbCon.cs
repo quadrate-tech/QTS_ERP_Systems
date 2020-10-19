@@ -39,6 +39,11 @@ namespace QTS_ERP_Systems
             var Collection = db.GetCollection<T>(table);
             Collection.InsertOne(record);
         }
+        public void InsertBusinessModel<T>(string table, T record)
+        {
+            var Collection = db.GetCollection<T>(table);
+            Collection.InsertOne(record);
+        }
         public void UpdateCategory(string table,string Id, string categoryName)
         {
             var collection = db.GetCollection<Category>(table);
@@ -78,7 +83,16 @@ namespace QTS_ERP_Systems
                                                   .Set("ContactNo", Contact_No);
             Collection.UpdateOne(filter, update);
         }
-
+        public void UpdateBusinessModel(string table, int Id, string Name, string Address, string Contact, bool IsActive)
+        {
+            var Collection = db.GetCollection<BusinessModel>(table);
+            var filter = Builders<BusinessModel>.Filter.Eq("Id", Id);
+            var update = Builders<BusinessModel>.Update.Set("Name", Name)
+                                                  .Set("Address", Address)
+                                                  .Set("Contact", Contact)
+                                                  .Set("IsActive", IsActive);
+            Collection.UpdateOne(filter, update);
+        }
         public List<Employee> FilterEmployee(string EmpName)
         {
             try
@@ -171,6 +185,29 @@ namespace QTS_ERP_Systems
                 throw;
             }
         }
+        public List<BusinessModel> FilterBusinessModel(string Name)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(Name))
+                {
+                    IMongoCollection<BusinessModel> Collection = db.GetCollection<BusinessModel>("BusinessModels");
+                    var result = Collection.AsQueryable().Where(u => u.Name.Contains(Name)).ToList();
+                    return result;
+                }
+                else
+                {
+                    IMongoCollection<BusinessModel> Collection = db.GetCollection<BusinessModel>("BusinessModels");
+                    var result = Collection.AsQueryable().ToList();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
 
         public void DeleteOne(string Id)
         {
@@ -199,6 +236,11 @@ namespace QTS_ERP_Systems
         {
             IMongoCollection<Customer> collection = db.GetCollection<Customer>("Customers");
             collection.DeleteOne(a => a.CustomerId== Id);
+        }
+        public void DeleteBusinessModel(int Id)
+        {
+            IMongoCollection<BusinessModel> collection = db.GetCollection<BusinessModel>("BusinessModels");
+            collection.DeleteOne(a => a.Id == Id);
         }
     }
 }
