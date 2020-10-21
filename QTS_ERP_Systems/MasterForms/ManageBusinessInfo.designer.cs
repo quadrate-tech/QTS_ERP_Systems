@@ -40,14 +40,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.TxtId = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
-            this.BtnActivate = new System.Windows.Forms.Button();
+            this.chBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVBusinessInfo)).BeginInit();
             this.BaseLayout.SuspendLayout();
             this.CRUDLayout.SuspendLayout();
@@ -87,7 +86,6 @@
             this.BaseLayout.Controls.Add(this.DGVBusinessInfo, 0, 0);
             this.BaseLayout.Controls.Add(this.CRUDLayout, 0, 1);
             this.BaseLayout.Controls.Add(this.tableLayoutPanel2, 1, 0);
-            this.BaseLayout.Controls.Add(this.BtnActivate, 1, 1);
             this.BaseLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BaseLayout.Location = new System.Drawing.Point(0, 0);
             this.BaseLayout.Name = "BaseLayout";
@@ -109,7 +107,7 @@
             this.CRUDLayout.Controls.Add(this.label1, 0, 0);
             this.CRUDLayout.Controls.Add(this.label2, 0, 2);
             this.CRUDLayout.Controls.Add(this.label4, 0, 3);
-            this.CRUDLayout.Controls.Add(this.TxtId, 1, 0);
+            this.CRUDLayout.Controls.Add(this.chBox, 1, 0);
             this.CRUDLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CRUDLayout.Location = new System.Drawing.Point(3, 312);
             this.CRUDLayout.Name = "CRUDLayout";
@@ -167,7 +165,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Business Id";
+            this.label1.Text = "Service";
             // 
             // label2
             // 
@@ -190,14 +188,6 @@
             this.label4.Size = new System.Drawing.Size(174, 32);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contact";
-            // 
-            // TxtId
-            // 
-            this.TxtId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtId.Location = new System.Drawing.Point(183, 3);
-            this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(375, 26);
-            this.TxtId.TabIndex = 4;
             // 
             // tableLayoutPanel2
             // 
@@ -280,17 +270,15 @@
             this.BtnCancel.UseVisualStyleBackColor = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // BtnActivate
+            // chBox
             // 
-            this.BtnActivate.BackColor = System.Drawing.Color.White;
-            this.BtnActivate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnActivate.Location = new System.Drawing.Point(570, 312);
-            this.BtnActivate.Name = "BtnActivate";
-            this.BtnActivate.Size = new System.Drawing.Size(183, 125);
-            this.BtnActivate.TabIndex = 3;
-            this.BtnActivate.Text = "Activate";
-            this.BtnActivate.UseVisualStyleBackColor = false;
-            this.BtnActivate.Click += new System.EventHandler(this.BtnActivate_Click);
+            this.chBox.AutoSize = true;
+            this.chBox.Location = new System.Drawing.Point(183, 3);
+            this.chBox.Name = "chBox";
+            this.chBox.Size = new System.Drawing.Size(114, 23);
+            this.chBox.TabIndex = 8;
+            this.chBox.Text = "checkBox1";
+            this.chBox.UseVisualStyleBackColor = true;
             // 
             // BusinessInfo
             // 
@@ -327,14 +315,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TxtId;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.Button BtnAdd;
-        private System.Windows.Forms.Button BtnActivate;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsActive;
+        private System.Windows.Forms.CheckBox chBox;
     }
 }

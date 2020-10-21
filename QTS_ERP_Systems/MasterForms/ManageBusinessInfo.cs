@@ -1,14 +1,24 @@
-﻿using QTS_ERP_Systems.Model;
+﻿
+using QTS_ERP_Systems.Model;
 using System;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+using QTS_ERP_Systems;
+
 namespace SimpleBilling.MasterForms
 {
     public partial class BusinessInfo : Form
     {
+        readonly DbCon db = new DbCon();
+        private int bId;
+        private string bName;
+        private string bAddress;
+        private string bContact;
+        private bool bIsActive;
+        private readonly string Collection = "BusinessInfos";
         public BusinessInfo()
         {
             InitializeComponent();
@@ -16,7 +26,7 @@ namespace SimpleBilling.MasterForms
         }
         private void ClearText()
         {
-            TxtId.Clear();
+           
             TxtName.Clear();
             TxtAddress.Clear();
             TxtContact.Clear();
@@ -24,7 +34,7 @@ namespace SimpleBilling.MasterForms
         }
         private void EnableTrue()
         {
-            TxtId.Enabled = true;
+         
             TxtName.Enabled = true;
             TxtAddress.Enabled = true;
             TxtContact.Enabled = true;
@@ -32,7 +42,7 @@ namespace SimpleBilling.MasterForms
         }
         private void EnableFalse()
         {
-            TxtId.Enabled = false;
+           
             TxtName.Enabled = false;
             TxtAddress.Enabled = false;
             TxtContact.Enabled = false;
@@ -52,197 +62,82 @@ namespace SimpleBilling.MasterForms
 
         private void FrmLoad()
         {
-            throw new NotImplementedException();
+            
+            DGVBusinessInfo.DataSource = db.FilterBusinessModel("");
+            DGVBusinessInfo.Columns[0].Visible = false;
         }
 
-        private void DGVLoad()
-        {
-            CRUDLayout.Enabled = false;
-            BtnSave.Enabled = false;
-            BtnCancel.Enabled = false;
-            using (BillingContext db = new BillingContext())
-            {
-                var data = (from bm in db.BusinessModels.Where(c => !c.IsDeleted)
-                            select new
-                            {
-                                bm.Id,
-                                bm.Name,
-                                bm.Address,
-                                bm.Contact,
-                                bm.IsActive
-                            }).ToList();
-                DGVBusinessInfo.DataSource = data;
-            }
-            BtnActivate.Enabled = false;
-            DGVBusinessInfo_CellFormatting();
-        }
 
-        private void BtnActivate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (DGVBusinessInfo.SelectedRows.Count > 0)
-                {
-                    int id = Convert.ToInt32(DGVBusinessInfo.SelectedRows[0].Cells[0].Value + string.Empty);
-                    using (BillingContext db = new BillingContext())
-                    {
-                        var item = db.BusinessModels.FirstOrDefault(c => c.Id == id);
-                        var data = db.BusinessModels.Where(c => c.Id != id).ToList();
-                        foreach (var d in data)
-                        {
-                            d.IsActive = false;
-                            db.Entry(d).State = EntityState.Modified;
-                        }
-                        item.IsActive = true;
-                        db.Entry(item).State = EntityState.Modified;
-                        db.SaveChanges();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ExportJson.Add(ex); Info.Mes(ex.Message);
-            }
-            finally
-            {
-                DGVLoad();
-            }
-        }
+       
+     
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (BillingContext db = new BillingContext())
-                {
-                    int Id = Convert.ToInt32(TxtId.Text.Trim());
-                    if (Id == 0)
-                    {
-                        if (Info.IsEmpty(TxtName) && Info.IsEmpty(TxtAddress) && Info.IsEmpty(TxtContact))
-                        {
-                            BusinessModel bm = new BusinessModel
-                            {
-                                Name = TxtName.Text.Trim(),
-                                Address = TxtAddress.Text.Trim(),
-                                Contact = TxtContact.Text.Trim(),
-                                CreatedDate = DateTime.Now
-                            };
-                            if (db.Entry(bm).State == EntityState.Detached)
-                                db.Set<BusinessModel>().Attach(bm);
-                            db.Entry(bm).State = EntityState.Added;
-                            db.SaveChanges();
-                            Info.Mes("Business Info Added");
-                        }
-                        else
-                        {
-                            Info.Required();
-                        }
-                    }
-                    else
-                    {
-                        var bm = db.BusinessModels.FirstOrDefault(c => c.Id == Id);
-                        if (Info.IsEmpty(TxtName) && Info.IsEmpty(TxtAddress) && Info.IsEmpty(TxtContact))
-                        {
-                            bm.Name = TxtName.Text.Trim();
-                            bm.Address = TxtAddress.Text.Trim();
-                            bm.Contact = TxtContact.Text.Trim();
-                            bm.UpdatedDate = DateTime.Now;
-                            if (db.Entry(bm).State == EntityState.Detached)
-                                db.Set<BusinessModel>().Attach(bm);
-                            db.Entry(bm).State = EntityState.Modified;
-                            db.SaveChanges();
-                            Info.Mes("Business Info Modified");
-                        }
-                        else
-                        {
-                            Info.Required();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ExportJson.Add(ex); Info.Mes(ex.Message);
-            }
-            finally
-            {
-                DGVLoad();
-                CRUDLayout.Enabled = false;
-                BtnSave.Enabled = false;
-                BtnCancel.Enabled = false;
-            }
-        }
+            Random rnd = new Random();
+            BusinessModel bm = new BusinessModel
+            { Id = rnd.Next(),
+                Name = TxtName.Text.Trim(),
+                Address = TxtAddress.Text.Trim(),
+                Contact = TxtContact.Text.Trim(),
+                IsActive = Service()
 
+            };
+            db.InsertBusinessModel(Collection, bm);
+            ClearText();
+            FrmLoad();
+
+        }
+        private bool Service()
+        {
+            bool Service = false;
+            if (chBox.Checked)
+            {
+                Service = true;
+            }
+            else
+            {
+                Service = true;
+            }
+            return Service;
+        }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            CRUDLayout.Enabled = true;
-            BtnSave.Enabled = true;
-            BtnCancel.Enabled = true;
-            TxtName.Focus();
+         
+        bName=TxtName.Text;
+        bAddress=TxtAddress.Text;
+        bContact=TxtContact.Text;
+        bIsActive= Service();
+            db.UpdateBusinessModel(Collection, bId, bName, bAddress, bContact, bIsActive);
+            ClearText();
+            FrmLoad();
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the selected Item?", "Confirmation delete", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    using (BillingContext db = new BillingContext())
-                    {
-                        if (DGVBusinessInfo.SelectedRows.Count > 0)
-                        {
-                            int id = Convert.ToInt32(DGVBusinessInfo.SelectedRows[0].Cells[0].Value + string.Empty);
-                            var model = db.BusinessModels.FirstOrDefault(c => c.Id == id);
-                            model.IsDeleted = true;
-                            if (db.Entry(model).State == EntityState.Detached)
-                                db.Set<BusinessModel>().Attach(model);
-                            model.UpdatedDate = DateTime.Now;
-                            db.Entry(model).State = EntityState.Modified;
-                            db.SaveChangesAsync();
-                            Info.Mes("Business Info Deleted Successfully");
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Info.Mes(ex.ToString());
-            }
-            finally
-            {
-                DGVBusinessInfo.Refresh();
-                DGVLoad();
-            }
+            db.DeleteBusinessModel(bId);
+                ClearText();
+            FrmLoad();
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            CRUDLayout.Enabled = false;
-            BtnSave.Enabled = false;
+            ClearText();
+            EnableFalse();
         }
 
-        private void DGVBusinessInfo_CellFormatting()
-        {
-            foreach (DataGridViewRow Myrow in DGVBusinessInfo.Rows)
-            {
-                if (Convert.ToBoolean(Myrow.Cells[4].Value))
-                {
-                    Myrow.DefaultCellStyle.BackColor = Color.SkyBlue;
-                }
-            }
-        }
+        
 
         private void DGVBusinessInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (DGVBusinessInfo.SelectedRows.Count > 0)
-            {
-                BtnActivate.Enabled = true;
-                TxtId.Text = DGVBusinessInfo.SelectedRows[0].Cells[0].Value + string.Empty;
-                TxtName.Text = DGVBusinessInfo.SelectedRows[0].Cells[1].Value + string.Empty;
-                TxtAddress.Text = DGVBusinessInfo.SelectedRows[0].Cells[2].Value + string.Empty;
-                TxtContact.Text = DGVBusinessInfo.SelectedRows[0].Cells[3].Value + string.Empty;
-            }
+           
+            
+               
+                bId = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
+                TxtName.Text = DGVBusinessInfo.CurrentRow.Cells[1].Value.ToString();
+                TxtAddress.Text = DGVBusinessInfo.CurrentRow.Cells[2].Value.ToString();
+                TxtContact.Text = DGVBusinessInfo.CurrentRow.Cells[3].Value.ToString();
+                chBox.Enabled = Convert.ToBoolean(DGVBusinessInfo.CurrentRow.Cells[4].Value.ToString());
+           
         }
 
         private void TxtName_KeyUp(object sender, KeyEventArgs e)
