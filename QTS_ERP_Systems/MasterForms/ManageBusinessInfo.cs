@@ -19,7 +19,7 @@ namespace QTS_ERP_Systems.MasterForms
         private string bAddress;
         private string bContact;
         private bool bIsActive;
-        private readonly string Collection = "BusinessInfos";
+        private readonly string Collection = "BusinessModels";
         public ManageBusinessInfo()
         {
             InitializeComponent();
