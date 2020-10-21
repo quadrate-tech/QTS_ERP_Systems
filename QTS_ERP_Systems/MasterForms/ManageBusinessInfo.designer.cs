@@ -30,7 +30,6 @@
         {
             this.BaseLayout = new System.Windows.Forms.TableLayoutPanel();
             this.DGVBusinessInfo = new System.Windows.Forms.DataGridView();
-            this.IsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.CRUDLayout = new System.Windows.Forms.TableLayoutPanel();
             this.TxtContact = new System.Windows.Forms.TextBox();
             this.TxtAddress = new System.Windows.Forms.TextBox();
@@ -77,8 +76,6 @@
             this.DGVBusinessInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVBusinessInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVBusinessInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVBusinessInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IsActive});
             this.DGVBusinessInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVBusinessInfo.Location = new System.Drawing.Point(3, 3);
             this.DGVBusinessInfo.Name = "DGVBusinessInfo";
@@ -86,13 +83,6 @@
             this.DGVBusinessInfo.Size = new System.Drawing.Size(594, 310);
             this.DGVBusinessInfo.TabIndex = 0;
             this.DGVBusinessInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVBusinessInfo_CellClick);
-            // 
-            // IsActive
-            // 
-            this.IsActive.DataPropertyName = "IsActive";
-            this.IsActive.HeaderText = "Active";
-            this.IsActive.Name = "IsActive";
-            this.IsActive.ReadOnly = true;
             // 
             // CRUDLayout
             // 
@@ -301,7 +291,6 @@
 
         private System.Windows.Forms.TableLayoutPanel BaseLayout;
         private System.Windows.Forms.DataGridView DGVBusinessInfo;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsActive;
         private System.Windows.Forms.TableLayoutPanel CRUDLayout;
         private System.Windows.Forms.TextBox TxtContact;
         private System.Windows.Forms.TextBox TxtAddress;

@@ -33,7 +33,7 @@ namespace QTS_ERP_Systems.MasterForms
         {
 
             DGVBusinessInfo.DataSource = db.FilterBusinessModel("");
-            DGVBusinessInfo.Columns[0].Visible = false;
+           // DGVBusinessInfo.Columns[0].Visible = false;
         }
         private void ClearText()
         {

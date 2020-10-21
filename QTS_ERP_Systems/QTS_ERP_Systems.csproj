@@ -221,9 +221,9 @@
     <Compile Include="MasterForms\ManageItems.Designer.cs">
       <DependentUpon>ManageItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\BusinessModel.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Cheque.cs" />
+    <Compile Include="Model\BusinessModel.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\RandomString.cs" />
