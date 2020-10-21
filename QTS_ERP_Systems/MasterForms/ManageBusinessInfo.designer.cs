@@ -53,6 +53,7 @@
             // 
             // BaseLayout
             // 
+            this.BaseLayout.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BaseLayout.ColumnCount = 2;
             this.BaseLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.BaseLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -63,9 +64,9 @@
             this.BaseLayout.Location = new System.Drawing.Point(0, 0);
             this.BaseLayout.Name = "BaseLayout";
             this.BaseLayout.RowCount = 2;
-            this.BaseLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.31963F));
-            this.BaseLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.68036F));
-            this.BaseLayout.Size = new System.Drawing.Size(800, 450);
+            this.BaseLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.11111F));
+            this.BaseLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.88889F));
+            this.BaseLayout.Size = new System.Drawing.Size(944, 467);
             this.BaseLayout.TabIndex = 2;
             // 
             // DGVBusinessInfo
@@ -80,7 +81,7 @@
             this.DGVBusinessInfo.Location = new System.Drawing.Point(3, 3);
             this.DGVBusinessInfo.Name = "DGVBusinessInfo";
             this.DGVBusinessInfo.ReadOnly = true;
-            this.DGVBusinessInfo.Size = new System.Drawing.Size(594, 310);
+            this.DGVBusinessInfo.Size = new System.Drawing.Size(702, 326);
             this.DGVBusinessInfo.TabIndex = 0;
             this.DGVBusinessInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVBusinessInfo_CellClick);
             // 
@@ -92,45 +93,45 @@
             this.CRUDLayout.Controls.Add(this.TxtContact, 1, 3);
             this.CRUDLayout.Controls.Add(this.TxtAddress, 1, 2);
             this.CRUDLayout.Controls.Add(this.TxtName, 1, 1);
+            this.CRUDLayout.Controls.Add(this.chBox, 1, 0);
             this.CRUDLayout.Controls.Add(this.label3, 0, 1);
             this.CRUDLayout.Controls.Add(this.label1, 0, 0);
             this.CRUDLayout.Controls.Add(this.label2, 0, 2);
             this.CRUDLayout.Controls.Add(this.label4, 0, 3);
-            this.CRUDLayout.Controls.Add(this.chBox, 1, 0);
             this.CRUDLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CRUDLayout.Location = new System.Drawing.Point(3, 319);
+            this.CRUDLayout.Location = new System.Drawing.Point(3, 335);
             this.CRUDLayout.Name = "CRUDLayout";
             this.CRUDLayout.RowCount = 4;
+            this.CRUDLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.80645F));
             this.CRUDLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.CRUDLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.19355F));
             this.CRUDLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CRUDLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CRUDLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CRUDLayout.Size = new System.Drawing.Size(594, 128);
+            this.CRUDLayout.Size = new System.Drawing.Size(702, 129);
             this.CRUDLayout.TabIndex = 1;
             // 
             // TxtContact
             // 
             this.TxtContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtContact.Location = new System.Drawing.Point(193, 99);
+            this.TxtContact.Location = new System.Drawing.Point(228, 99);
             this.TxtContact.Name = "TxtContact";
-            this.TxtContact.Size = new System.Drawing.Size(398, 20);
+            this.TxtContact.Size = new System.Drawing.Size(471, 20);
             this.TxtContact.TabIndex = 7;
             // 
             // TxtAddress
             // 
             this.TxtAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtAddress.Location = new System.Drawing.Point(193, 67);
+            this.TxtAddress.Location = new System.Drawing.Point(228, 68);
             this.TxtAddress.Name = "TxtAddress";
-            this.TxtAddress.Size = new System.Drawing.Size(398, 20);
+            this.TxtAddress.Size = new System.Drawing.Size(471, 20);
             this.TxtAddress.TabIndex = 6;
             this.TxtAddress.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtAddress_KeyUp);
             // 
             // TxtName
             // 
             this.TxtName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtName.Location = new System.Drawing.Point(193, 35);
+            this.TxtName.Location = new System.Drawing.Point(228, 36);
             this.TxtName.Name = "TxtName";
-            this.TxtName.Size = new System.Drawing.Size(398, 20);
+            this.TxtName.Size = new System.Drawing.Size(471, 20);
             this.TxtName.TabIndex = 5;
             this.TxtName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtName_KeyUp);
             // 
@@ -138,10 +139,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 32);
+            this.label3.Location = new System.Drawing.Point(3, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 32);
+            this.label3.Size = new System.Drawing.Size(219, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "Business Name";
             // 
@@ -149,10 +151,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 32);
+            this.label1.Size = new System.Drawing.Size(219, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Service";
             // 
@@ -160,10 +163,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 64);
+            this.label2.Location = new System.Drawing.Point(3, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 32);
+            this.label2.Size = new System.Drawing.Size(219, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Address";
             // 
@@ -171,17 +175,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 96);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 32);
+            this.label4.Size = new System.Drawing.Size(219, 33);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contact";
             // 
             // chBox
             // 
             this.chBox.AutoSize = true;
-            this.chBox.Location = new System.Drawing.Point(193, 3);
+            this.chBox.Location = new System.Drawing.Point(228, 3);
             this.chBox.Name = "chBox";
             this.chBox.Size = new System.Drawing.Size(80, 17);
             this.chBox.TabIndex = 8;
@@ -198,7 +203,7 @@
             this.tableLayoutPanel2.Controls.Add(this.BtnAdd, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.BtnCancel, 0, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(603, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(711, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -206,16 +211,17 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(194, 310);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(230, 326);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // BtnSave
             // 
             this.BtnSave.BackColor = System.Drawing.Color.White;
             this.BtnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnSave.Location = new System.Drawing.Point(3, 251);
+            this.BtnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnSave.Location = new System.Drawing.Point(3, 263);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(188, 56);
+            this.BtnSave.Size = new System.Drawing.Size(224, 60);
             this.BtnSave.TabIndex = 4;
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = false;
@@ -225,9 +231,10 @@
             // 
             this.BtnDelete.BackColor = System.Drawing.Color.White;
             this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDelete.Location = new System.Drawing.Point(3, 127);
+            this.BtnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnDelete.Location = new System.Drawing.Point(3, 133);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(188, 56);
+            this.BtnDelete.Size = new System.Drawing.Size(224, 59);
             this.BtnDelete.TabIndex = 2;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.UseVisualStyleBackColor = false;
@@ -237,9 +244,10 @@
             // 
             this.BtnEdit.BackColor = System.Drawing.Color.White;
             this.BtnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnEdit.Location = new System.Drawing.Point(3, 65);
+            this.BtnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnEdit.Location = new System.Drawing.Point(3, 68);
             this.BtnEdit.Name = "BtnEdit";
-            this.BtnEdit.Size = new System.Drawing.Size(188, 56);
+            this.BtnEdit.Size = new System.Drawing.Size(224, 59);
             this.BtnEdit.TabIndex = 1;
             this.BtnEdit.Text = "Edit";
             this.BtnEdit.UseVisualStyleBackColor = false;
@@ -249,9 +257,10 @@
             // 
             this.BtnAdd.BackColor = System.Drawing.Color.White;
             this.BtnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.BtnAdd.Location = new System.Drawing.Point(3, 3);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(188, 56);
+            this.BtnAdd.Size = new System.Drawing.Size(224, 59);
             this.BtnAdd.TabIndex = 0;
             this.BtnAdd.Text = "Add";
             this.BtnAdd.UseVisualStyleBackColor = false;
@@ -261,9 +270,10 @@
             // 
             this.BtnCancel.BackColor = System.Drawing.Color.White;
             this.BtnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnCancel.Location = new System.Drawing.Point(3, 189);
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnCancel.Location = new System.Drawing.Point(3, 198);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(188, 56);
+            this.BtnCancel.Size = new System.Drawing.Size(224, 59);
             this.BtnCancel.TabIndex = 3;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = false;
@@ -273,7 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(944, 467);
             this.Controls.Add(this.BaseLayout);
             this.Name = "ManageBusinessInfo";
             this.Text = "Form1";
