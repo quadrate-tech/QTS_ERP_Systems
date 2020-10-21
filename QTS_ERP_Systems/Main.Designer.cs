@@ -140,6 +140,7 @@
             this.manageBusinessInfoToolStripMenuItem.Name = "manageBusinessInfoToolStripMenuItem";
             this.manageBusinessInfoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.manageBusinessInfoToolStripMenuItem.Text = "Manage Business Info";
+            this.manageBusinessInfoToolStripMenuItem.Click += new System.EventHandler(this.manageBusinessInfoToolStripMenuItem_Click);
             // 
             // manageBankToolStripMenuItem
             // 
@@ -167,25 +168,25 @@
             // gRNInvoicesToolStripMenuItem
             // 
             this.gRNInvoicesToolStripMenuItem.Name = "gRNInvoicesToolStripMenuItem";
-            this.gRNInvoicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gRNInvoicesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.gRNInvoicesToolStripMenuItem.Text = "GRN Invoices";
             // 
             // receiptsToolStripMenuItem
             // 
             this.receiptsToolStripMenuItem.Name = "receiptsToolStripMenuItem";
-            this.receiptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.receiptsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.receiptsToolStripMenuItem.Text = "Receipts";
             // 
             // voidReceiptsToolStripMenuItem
             // 
             this.voidReceiptsToolStripMenuItem.Name = "voidReceiptsToolStripMenuItem";
-            this.voidReceiptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.voidReceiptsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.voidReceiptsToolStripMenuItem.Text = "Void Receipts";
             // 
             // pendingReceiptsToolStripMenuItem
             // 
             this.pendingReceiptsToolStripMenuItem.Name = "pendingReceiptsToolStripMenuItem";
-            this.pendingReceiptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pendingReceiptsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.pendingReceiptsToolStripMenuItem.Text = "Pending Receipts";
             // 
             // pOSToolStripMenuItem
@@ -205,7 +206,7 @@
             // configsToolStripMenuItem
             // 
             this.configsToolStripMenuItem.Name = "configsToolStripMenuItem";
-            this.configsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configsToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.configsToolStripMenuItem.Text = "Configs";
             // 
             // Main

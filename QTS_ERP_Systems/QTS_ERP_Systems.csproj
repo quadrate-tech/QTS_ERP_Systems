@@ -188,7 +188,7 @@
     <Compile Include="MasterForms\ManageBusinessInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterForms\ManageBusinessInfo.designer.cs">
+    <Compile Include="MasterForms\ManageBusinessInfo.Designer.cs">
       <DependentUpon>ManageBusinessInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="MasterForms\ManageCategory.cs">

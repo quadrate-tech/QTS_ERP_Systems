@@ -1,11 +1,10 @@
 ﻿namespace QTS_ERP_Systems.MasterForms
 {
-    partial class ManageCustomers
-    {
+    partial class ManageCustomers { 
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+    private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.

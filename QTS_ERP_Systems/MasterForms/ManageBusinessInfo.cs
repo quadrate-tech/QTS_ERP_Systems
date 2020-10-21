@@ -1,16 +1,17 @@
-﻿
-using QTS_ERP_Systems.Model;
+﻿using QTS_ERP_Systems.Model;
 using System;
-using System.Data.Entity;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using QTS_ERP_Systems;
-
-namespace SimpleBilling.MasterForms
+namespace QTS_ERP_Systems.MasterForms
 {
-    public partial class BusinessInfo : Form
+    public partial class ManageBusinessInfo : Form
     {
         readonly DbCon db = new DbCon();
         private int bId;
@@ -19,30 +20,40 @@ namespace SimpleBilling.MasterForms
         private string bContact;
         private bool bIsActive;
         private readonly string Collection = "BusinessInfos";
-        public BusinessInfo()
+        public ManageBusinessInfo()
         {
             InitializeComponent();
-            
+        }
+
+        private void ManageBusinessInfo_Load(object sender, EventArgs e)
+        {
+            FrmLoad();
+        }
+        private void FrmLoad()
+        {
+
+            DGVBusinessInfo.DataSource = db.FilterBusinessModel("");
+            DGVBusinessInfo.Columns[0].Visible = false;
         }
         private void ClearText()
         {
-           
+
             TxtName.Clear();
             TxtAddress.Clear();
             TxtContact.Clear();
-        
+
         }
         private void EnableTrue()
         {
-         
+
             TxtName.Enabled = true;
             TxtAddress.Enabled = true;
             TxtContact.Enabled = true;
-          
+
         }
         private void EnableFalse()
         {
-           
+
             TxtName.Enabled = false;
             TxtAddress.Enabled = false;
             TxtContact.Enabled = false;
@@ -51,31 +62,17 @@ namespace SimpleBilling.MasterForms
         {
             ClearText();
             EnableTrue();
-            
+
             TxtName.Focus();
         }
 
-        private void BusinessInfo_Load(object sender, EventArgs e)
-        {
-            FrmLoad();
-        }
-
-        private void FrmLoad()
-        {
-            
-            DGVBusinessInfo.DataSource = db.FilterBusinessModel("");
-            DGVBusinessInfo.Columns[0].Visible = false;
-        }
-
-
-       
-     
-
         private void BtnSave_Click(object sender, EventArgs e)
         {
+
             Random rnd = new Random();
             BusinessModel bm = new BusinessModel
-            { Id = rnd.Next(),
+            {
+                Id = rnd.Next(),
                 Name = TxtName.Text.Trim(),
                 Address = TxtAddress.Text.Trim(),
                 Contact = TxtContact.Text.Trim(),
@@ -100,13 +97,13 @@ namespace SimpleBilling.MasterForms
             }
             return Service;
         }
+
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-         
-        bName=TxtName.Text;
-        bAddress=TxtAddress.Text;
-        bContact=TxtContact.Text;
-        bIsActive= Service();
+            bName = TxtName.Text;
+            bAddress = TxtAddress.Text;
+            bContact = TxtContact.Text;
+            bIsActive = Service();
             db.UpdateBusinessModel(Collection, bId, bName, bAddress, bContact, bIsActive);
             ClearText();
             FrmLoad();
@@ -115,7 +112,7 @@ namespace SimpleBilling.MasterForms
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             db.DeleteBusinessModel(bId);
-                ClearText();
+            ClearText();
             FrmLoad();
         }
 
@@ -125,19 +122,14 @@ namespace SimpleBilling.MasterForms
             EnableFalse();
         }
 
-        
-
         private void DGVBusinessInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-            
-               
-                bId = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
-                TxtName.Text = DGVBusinessInfo.CurrentRow.Cells[1].Value.ToString();
-                TxtAddress.Text = DGVBusinessInfo.CurrentRow.Cells[2].Value.ToString();
-                TxtContact.Text = DGVBusinessInfo.CurrentRow.Cells[3].Value.ToString();
-                chBox.Enabled = Convert.ToBoolean(DGVBusinessInfo.CurrentRow.Cells[4].Value.ToString());
-           
+
+            bId = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
+            TxtName.Text = DGVBusinessInfo.CurrentRow.Cells[1].Value.ToString();
+            TxtAddress.Text = DGVBusinessInfo.CurrentRow.Cells[2].Value.ToString();
+            TxtContact.Text = DGVBusinessInfo.CurrentRow.Cells[3].Value.ToString();
+            chBox.Enabled = Convert.ToBoolean(DGVBusinessInfo.CurrentRow.Cells[4].Value.ToString());
         }
 
         private void TxtName_KeyUp(object sender, KeyEventArgs e)
@@ -147,7 +139,7 @@ namespace SimpleBilling.MasterForms
 
         private void TxtAddress_KeyUp(object sender, KeyEventArgs e)
         {
-            Info.ToCapital(TxtAddress);
+            Info.ToCapital(TxtName);
         }
     }
 }

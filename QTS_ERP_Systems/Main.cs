@@ -81,5 +81,23 @@ namespace QTS_ERP_Systems
             };
             manageCustomers.Show();
         }
+
+        private void manageBusinessInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(ManageBusinessInfo))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            ManageBusinessInfo manageBusinessInfo = new ManageBusinessInfo
+            {
+                MdiParent = this
+            };
+            manageBusinessInfo.Show();
+        }
     }
 }
