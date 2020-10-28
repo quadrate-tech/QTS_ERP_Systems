@@ -1,19 +1,22 @@
-﻿using QTS_ERP_Systems.Model;
+﻿using MongoDB.Driver;
+using QTS_ERP_Systems.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace QTS_ERP_Systems.MasterForms
 {
     public partial class ManageBusinessInfo : Form
     {
-        readonly DbCon db = new DbCon();
+        DbCon db = new DbCon();
         private int bId;
         private string bName;
         private string bAddress;
@@ -33,7 +36,7 @@ namespace QTS_ERP_Systems.MasterForms
         {
 
             DGVBusinessInfo.DataSource = db.FilterBusinessModel("");
-           // DGVBusinessInfo.Columns[0].Visible = false;
+            // DGVBusinessInfo.Columns[0].Visible = false;
         }
         private void ClearText()
         {
@@ -141,5 +144,20 @@ namespace QTS_ERP_Systems.MasterForms
         {
             Info.ToCapital(TxtName);
         }
-    }
-}
+
+        private void activate_Click(object sender, EventArgs e)
+        {
+           
+                if (DGVBusinessInfo.SelectedRows.Count > 0)
+                {
+                    int id = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
+
+                {
+                    db.isactivebtn(id);
+                    FrmLoad();
+                }
+                }
+
+
+            }} } 
+ 

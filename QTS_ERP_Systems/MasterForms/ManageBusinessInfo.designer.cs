@@ -34,17 +34,18 @@
             this.TxtContact = new System.Windows.Forms.TextBox();
             this.TxtAddress = new System.Windows.Forms.TextBox();
             this.TxtName = new System.Windows.Forms.TextBox();
+            this.chBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.chBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
+            this.activate = new System.Windows.Forms.Button();
             this.BaseLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVBusinessInfo)).BeginInit();
             this.CRUDLayout.SuspendLayout();
@@ -60,6 +61,7 @@
             this.BaseLayout.Controls.Add(this.DGVBusinessInfo, 0, 0);
             this.BaseLayout.Controls.Add(this.CRUDLayout, 0, 1);
             this.BaseLayout.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.BaseLayout.Controls.Add(this.activate, 1, 1);
             this.BaseLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BaseLayout.Location = new System.Drawing.Point(0, 0);
             this.BaseLayout.Name = "BaseLayout";
@@ -135,6 +137,16 @@
             this.TxtName.TabIndex = 5;
             this.TxtName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtName_KeyUp);
             // 
+            // chBox
+            // 
+            this.chBox.AutoSize = true;
+            this.chBox.Location = new System.Drawing.Point(228, 3);
+            this.chBox.Name = "chBox";
+            this.chBox.Size = new System.Drawing.Size(80, 17);
+            this.chBox.TabIndex = 8;
+            this.chBox.Text = "checkBox1";
+            this.chBox.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -182,16 +194,6 @@
             this.label4.Size = new System.Drawing.Size(219, 33);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contact";
-            // 
-            // chBox
-            // 
-            this.chBox.AutoSize = true;
-            this.chBox.Location = new System.Drawing.Point(228, 3);
-            this.chBox.Name = "chBox";
-            this.chBox.Size = new System.Drawing.Size(80, 17);
-            this.chBox.TabIndex = 8;
-            this.chBox.Text = "checkBox1";
-            this.chBox.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -279,6 +281,18 @@
             this.BtnCancel.UseVisualStyleBackColor = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // activate
+            // 
+            this.activate.BackColor = System.Drawing.Color.White;
+            this.activate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.activate.Location = new System.Drawing.Point(711, 335);
+            this.activate.Name = "activate";
+            this.activate.Size = new System.Drawing.Size(230, 129);
+            this.activate.TabIndex = 3;
+            this.activate.Text = "Active";
+            this.activate.UseVisualStyleBackColor = false;
+            this.activate.Click += new System.EventHandler(this.activate_Click);
+            // 
             // ManageBusinessInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,5 +330,6 @@
         private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Button activate;
     }
 }
