@@ -13,7 +13,7 @@ namespace QTS_ERP_Systems
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new MasterForms.PurchaseOrder());
         }
     }
 }

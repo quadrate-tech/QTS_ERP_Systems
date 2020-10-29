@@ -1,7 +1,9 @@
 ﻿using MongoDB.Driver;
 using QTS_ERP_Systems.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -46,6 +48,11 @@ namespace QTS_ERP_Systems
             Collection.InsertOne(record);
         }
         public void InsertVehicle<T>(string table, T record)
+        {
+            var Collection = db.GetCollection<T>(table);
+            Collection.InsertOne(record);
+        }
+        public void InsertPurchaseOrder<T>(string table, T record)
         {
             var Collection = db.GetCollection<T>(table);
             Collection.InsertOne(record);
@@ -246,8 +253,104 @@ namespace QTS_ERP_Systems
                 throw;
             }
         }
+        public List<string> FormLoadAllPurchaseOrder(string Date)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(Date))
+                {
+                    IMongoCollection<PurchaseOrder> Collection = db.GetCollection<PurchaseOrder>("PurchaseOrder");
+                    var result = Collection.AsQueryable().Where(u => u.IsReceived && !u.IsDeleted).Select(u => u.Date).ToList();
+
+                    return result;
+                }
+                else
+                {
+                    IMongoCollection<PurchaseOrder> Collection = db.GetCollection<PurchaseOrder>("PurchaseOrder");
+                    var result = Collection.AsQueryable().Where(u => u.Date == Date && u.IsReceived && !u.IsDeleted).Select(u => u.Date).ToList();
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
+        public List<OrderedItem> FormLoadOrderedItems(string Date)
+        {
+            //FormLoadAllPurchaseOrder(string.Empty);
+            IMongoCollection<PurchaseOrder> CollectionPurOrd = db.GetCollection<PurchaseOrder>("PurchaseOrder");
+            IMongoCollection<OrderedItem> CollectionOrdItem = db.GetCollection<OrderedItem>("OrderedItem");
+            IMongoCollection<Item> CollectionItem = db.GetCollection<Item>("Item");
 
 
+            var OrderedItems = (from PurOrd in CollectionPurOrd.AsQueryable().Where(i => i.Date == Date && !i.IsDeleted)
+                                join OrdItm in CollectionOrdItem.AsQueryable().Where(i => !i.IsReceived && !i.IsDeleted)
+                                on PurOrd.Date equals OrdItm.OrderedDate
+                                join It in CollectionItem.AsQueryable().Where(i => !i.IsDeleted)
+                                on OrdItm.ItemCode equals It.item_code into g
+                                select new 
+                                {
+                                    ItemCode = OrdItm.ItemCode,
+                                    printable_name = It.printable_name,
+                                    Quantity = OrdItm.Quantity
+                                }).ToList();
+            /*
+            var OrderedItems = (from PurOrd in CollectionPurOrd.AsQueryable().Where(i => i.Date == Date && !i.IsDeleted)
+                                join OrdItm in CollectionOrdItem.AsQueryable().Where(i => !i.IsReceived && !i.IsDeleted)
+                                on PurOrd.Date equals OrdItm.OrderedDate
+                                join It in CollectionItem.AsQueryable().Where(i => !i.IsDeleted)
+                                on OrdItm.ItemCode equals It.item_code
+                                select new OrderedItem()
+                                {
+                                    OrdItm.ItemCode,
+                                    It.printable_name,
+                                    OrdItm.Quantity
+                                }).ToList();*/
+            return OrderedItems;
+        }/*
+        public List<string> FormLoadReceivedItems(string Date)
+        {
+            IMongoCollection<PurchaseOrder> CollectionPurOrd = db.GetCollection<PurchaseOrder>("PurchaseOrder");
+            IMongoCollection<OrderedItem> CollectionOrdItem = db.GetCollection<OrderedItem>("OrderedItem");
+            IMongoCollection<Item> CollectionItem = db.GetCollection<Item>("Item");
+
+            var ReceivedItems = (from PurOrd in CollectionPurOrd.AsQueryable().Where(u => u.Date == Date && !u.IsDeleted)
+                                 join OrdItm in CollectionOrdItem.AsQueryable().Where(u => u.IsReceived && !u.IsDeleted)
+                                 on PurOrd.Date equals OrdItm.OrderedDate
+                                 join It in CollectionItem.AsQueryable().Where(u => !u.IsDeleted)
+                                 on OrdItm.ItemCode equals It.item_code
+                                 select new
+                                 {
+                                     OrdItm.ItemCode,
+                                     It.printable_name,
+                                     OrdItm.Quantity
+                                 }).ToList();
+
+            return ReceivedItems;
+        }*/
+        public List<Item> FormLoadItems()
+        {
+            IMongoCollection<Item> CollectionItem = db.GetCollection<Item>("Item");
+            var Items = (from Itm in CollectionItem.AsQueryable().Where(u => !u.IsDeleted)
+                         select new Item()
+                         {
+                             item_code = Itm.item_code,
+                             printable_name =Itm.printable_name,
+                             stock_quantity = Itm.stock_quantity
+                         }).OrderBy(u => u.stock_quantity).ToList();
+
+            return Items;
+        }
+        public List<string> FormLoadPendingOrders()
+        {
+            IMongoCollection<PurchaseOrder> CollectionPurOrd = db.GetCollection<PurchaseOrder>("PurchaseOrder");
+            var PendingOrders = CollectionPurOrd.AsQueryable().Where(u => !u.IsReceived && !u.IsDeleted)
+                                                                  .Select(u => u.Date).ToList();
+            return PendingOrders;
+        }
         public void DeleteOne(string Id)
         {
             IMongoCollection<Category> collection = db.GetCollection<Category>("Category");
@@ -291,6 +394,12 @@ namespace QTS_ERP_Systems
         {
             IMongoCollection<Vehicle> Collection = db.GetCollection<Vehicle>("Vehicle");
             var Check = Collection.AsQueryable().Any(u => u.vehicle_no == VehicleNo);
+            return Check;
+        }
+        public bool CheckPurchaseOrderDate(string Date)
+        {
+            IMongoCollection<PurchaseOrder> Collection = db.GetCollection<PurchaseOrder>("PurchaseOrder");
+            var Check = Collection.AsQueryable().Any(u => u.Date == Date);
             return Check;
         }
     }
