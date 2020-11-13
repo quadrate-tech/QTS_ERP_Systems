@@ -89,16 +89,16 @@ namespace QTS_ERP_Systems.MasterForms
         }
         private bool Service()
         {
-            bool Service = false;
+          bool Service_ ;
             if (chBox.Checked)
             {
-                Service = true;
+                Service_ = true;
             }
             else
             {
-                Service = true;
+                Service_ = false;
             }
-            return Service;
+            return Service_;
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
@@ -147,17 +147,25 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void activate_Click(object sender, EventArgs e)
         {
-           
-                if (DGVBusinessInfo.SelectedRows.Count > 0)
-                {
-                    int id = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
 
-                {
-                    db.isactivebtn(id);
-                    FrmLoad();
-                }
-                }
+            //if (DGVBusinessInfo.SelectedRows.Count > 0)
+            {
+                bName = TxtName.Text;
+                bAddress = TxtAddress.Text;
+                bContact = TxtContact.Text;
+                bIsActive = true;
+                db.UpdateBusinessModel(Collection, bId, bName, bAddress, bContact, bIsActive);
+                ClearText();
+                FrmLoad();
+                //int id = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
+
+                ////{
+                //    db.isactivebtn(id);
+                //    FrmLoad();
+                ////}
+            }
 
 
-            }} } 
+        }
+    } } 
  
