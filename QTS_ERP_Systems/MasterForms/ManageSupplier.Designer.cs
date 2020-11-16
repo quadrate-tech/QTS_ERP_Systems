@@ -63,8 +63,8 @@
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.875F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.125F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.14936F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.85064F));
             this.tableLayoutPanel1.Controls.Add(this.dgvSupplier, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
@@ -80,7 +80,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(841, 534);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(994, 477);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // dgvSupplier
@@ -106,7 +106,7 @@
             this.dgvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSupplier.Location = new System.Drawing.Point(3, 42);
             this.dgvSupplier.Name = "dgvSupplier";
-            this.dgvSupplier.Size = new System.Drawing.Size(480, 402);
+            this.dgvSupplier.Size = new System.Drawing.Size(581, 345);
             this.dgvSupplier.TabIndex = 3;
             this.dgvSupplier.TabStop = false;
             this.dgvSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Supplier_CellClick);
@@ -165,7 +165,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.txtSupplierContact, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(489, 42);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(590, 42);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
@@ -174,7 +174,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.63636F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.36364F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(349, 402);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(401, 345);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // label5
@@ -183,7 +183,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(15, 5);
+            this.label5.Location = new System.Drawing.Point(29, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 40);
             this.label5.TabIndex = 5;
@@ -193,9 +193,9 @@
             // 
             this.txtSupplierName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupplierName.Location = new System.Drawing.Point(101, 3);
+            this.txtSupplierName.Location = new System.Drawing.Point(115, 3);
             this.txtSupplierName.Name = "txtSupplierName";
-            this.txtSupplierName.Size = new System.Drawing.Size(245, 26);
+            this.txtSupplierName.Size = new System.Drawing.Size(283, 26);
             this.txtSupplierName.TabIndex = 1;
             this.txtSupplierName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierName_KeyPress);
             // 
@@ -205,7 +205,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(23, 65);
+            this.label6.Location = new System.Drawing.Point(37, 65);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 6;
@@ -217,9 +217,9 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(3, 266);
+            this.label7.Location = new System.Drawing.Point(3, 241);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 136);
+            this.label7.Size = new System.Drawing.Size(106, 104);
             this.label7.TabIndex = 7;
             this.label7.Text = "Opening Balance";
             // 
@@ -229,7 +229,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(20, 120);
+            this.label4.Location = new System.Drawing.Point(34, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 20);
             this.label4.TabIndex = 4;
@@ -239,9 +239,9 @@
             // 
             this.txtOpeningBalance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOpeningBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOpeningBalance.Location = new System.Drawing.Point(101, 269);
+            this.txtOpeningBalance.Location = new System.Drawing.Point(115, 244);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
-            this.txtOpeningBalance.Size = new System.Drawing.Size(245, 26);
+            this.txtOpeningBalance.Size = new System.Drawing.Size(283, 26);
             this.txtOpeningBalance.TabIndex = 5;
             this.txtOpeningBalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpeningBalance_KeyPress);
             // 
@@ -249,18 +249,18 @@
             // 
             this.supplierEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.supplierEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplierEmail.Location = new System.Drawing.Point(101, 164);
+            this.supplierEmail.Location = new System.Drawing.Point(115, 164);
             this.supplierEmail.Name = "supplierEmail";
-            this.supplierEmail.Size = new System.Drawing.Size(245, 26);
+            this.supplierEmail.Size = new System.Drawing.Size(283, 26);
             this.supplierEmail.TabIndex = 4;
             // 
             // txtSupplierAddress
             // 
             this.txtSupplierAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSupplierAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupplierAddress.Location = new System.Drawing.Point(101, 103);
+            this.txtSupplierAddress.Location = new System.Drawing.Point(115, 103);
             this.txtSupplierAddress.Name = "txtSupplierAddress";
-            this.txtSupplierAddress.Size = new System.Drawing.Size(245, 26);
+            this.txtSupplierAddress.Size = new System.Drawing.Size(283, 26);
             this.txtSupplierAddress.TabIndex = 1;
             this.txtSupplierAddress.TabStop = false;
             // 
@@ -270,7 +270,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(42, 203);
+            this.label3.Location = new System.Drawing.Point(56, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 3;
@@ -280,9 +280,9 @@
             // 
             this.txtSupplierContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSupplierContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupplierContact.Location = new System.Drawing.Point(101, 54);
+            this.txtSupplierContact.Location = new System.Drawing.Point(115, 54);
             this.txtSupplierContact.Name = "txtSupplierContact";
-            this.txtSupplierContact.Size = new System.Drawing.Size(245, 26);
+            this.txtSupplierContact.Size = new System.Drawing.Size(283, 26);
             this.txtSupplierContact.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -299,11 +299,11 @@
             this.tableLayoutPanel4.Controls.Add(this.BTNADD, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.BTNDELETE, 3, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 450);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 393);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(480, 81);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(581, 81);
             this.tableLayoutPanel4.TabIndex = 7;
             // 
             // BTNCANEL
@@ -312,7 +312,7 @@
             this.BTNCANEL.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.BTNCANEL.Location = new System.Drawing.Point(409, 3);
             this.BTNCANEL.Name = "BTNCANEL";
-            this.BTNCANEL.Size = new System.Drawing.Size(133, 75);
+            this.BTNCANEL.Size = new System.Drawing.Size(169, 75);
             this.BTNCANEL.TabIndex = 4;
             this.BTNCANEL.Text = "CANCEL";
             this.BTNCANEL.UseVisualStyleBackColor = true;
@@ -370,7 +370,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 534);
+            this.ClientSize = new System.Drawing.Size(994, 477);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ManageSupplier";
             this.Text = "ManageSupplier";
