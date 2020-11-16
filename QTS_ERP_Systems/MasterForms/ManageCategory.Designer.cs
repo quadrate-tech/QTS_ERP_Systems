@@ -51,7 +51,7 @@
             label1.ForeColor = System.Drawing.Color.White;
             label1.Location = new System.Drawing.Point(3, 76);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(397, 20);
+            label1.Size = new System.Drawing.Size(396, 20);
             label1.TabIndex = 3;
             label1.Text = "Filter";
             // 
@@ -60,7 +60,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.142857F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.85714F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.Controls.Add(this.TxtFilter, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.DGVCategory, 1, 2);
@@ -101,15 +101,15 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(655, 96);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(653, 96);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // BtnDelete
             // 
             this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDelete.Location = new System.Drawing.Point(406, 67);
+            this.BtnDelete.Location = new System.Drawing.Point(405, 67);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(246, 26);
+            this.BtnDelete.Size = new System.Drawing.Size(245, 26);
             this.BtnDelete.TabIndex = 4;
             this.BtnDelete.Text = "Delete Category";
             this.BtnDelete.UseVisualStyleBackColor = true;
@@ -121,15 +121,15 @@
             this.TxtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCategory.Location = new System.Drawing.Point(3, 3);
             this.TxtCategory.Name = "TxtCategory";
-            this.TxtCategory.Size = new System.Drawing.Size(397, 29);
+            this.TxtCategory.Size = new System.Drawing.Size(396, 29);
             this.TxtCategory.TabIndex = 0;
             // 
             // BtnAddCategory
             // 
             this.BtnAddCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnAddCategory.Location = new System.Drawing.Point(406, 3);
+            this.BtnAddCategory.Location = new System.Drawing.Point(405, 3);
             this.BtnAddCategory.Name = "BtnAddCategory";
-            this.BtnAddCategory.Size = new System.Drawing.Size(246, 26);
+            this.BtnAddCategory.Size = new System.Drawing.Size(245, 26);
             this.BtnAddCategory.TabIndex = 1;
             this.BtnAddCategory.Text = "Add Category";
             this.BtnAddCategory.UseVisualStyleBackColor = true;
@@ -138,9 +138,9 @@
             // BtnUpdate
             // 
             this.BtnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnUpdate.Location = new System.Drawing.Point(406, 35);
+            this.BtnUpdate.Location = new System.Drawing.Point(405, 35);
             this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(246, 26);
+            this.BtnUpdate.Size = new System.Drawing.Size(245, 26);
             this.BtnUpdate.TabIndex = 2;
             this.BtnUpdate.Text = "Update Category";
             this.BtnUpdate.UseVisualStyleBackColor = true;
@@ -159,7 +159,7 @@
             this.DGVCategory.Name = "DGVCategory";
             this.DGVCategory.ReadOnly = true;
             this.DGVCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVCategory.Size = new System.Drawing.Size(655, 427);
+            this.DGVCategory.Size = new System.Drawing.Size(653, 427);
             this.DGVCategory.TabIndex = 0;
             this.DGVCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCategory_CellClick);
             // 

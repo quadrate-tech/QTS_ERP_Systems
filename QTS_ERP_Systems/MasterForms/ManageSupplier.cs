@@ -39,6 +39,8 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void ClearText()
         {
+            TxtSupplierId.Clear();
+            TxtSupplierId.Clear(); 
             txtSupplierName.Clear();
             txtSupplierContact.Clear();
             txtSupplierAddress.Clear();
@@ -89,6 +91,7 @@ namespace QTS_ERP_Systems.MasterForms
         {
 
             name_ = txtSupplierName.Text.Trim();
+
             contact_ = txtSupplierContact.Text.Trim();
             address_ = txtSupplierAddress.Text.Trim();
             email_ = supplierEmail.Text.Trim();
@@ -114,12 +117,13 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void Supplier_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            TxtSupplierId.Text= dgvSupplier.CurrentRow.Cells[0].Value.ToString();
             supplierId_ = (int)dgvSupplier.CurrentRow.Cells[0].Value;
-            name_ = (string)dgvSupplier.CurrentRow.Cells[1].Value;
-            contact_ = (string)dgvSupplier.CurrentRow.Cells[2].Value;
-            address_ = (string)dgvSupplier.CurrentRow.Cells[3].Value;
-            email_ = (string)dgvSupplier.CurrentRow.Cells[4].Value;
-            pendingAmount_ = (int)dgvSupplier.CurrentRow.Cells[5].Value;
+            txtSupplierName.Text = dgvSupplier.CurrentRow.Cells[1].Value.ToString();
+            txtSupplierContact.Text = (string)dgvSupplier.CurrentRow.Cells[2].Value;
+            txtSupplierAddress.Text = (string)dgvSupplier.CurrentRow.Cells[3].Value;
+            supplierEmail.Text = (string)dgvSupplier.CurrentRow.Cells[4].Value;
+            txtOpeningBalance.Text = dgvSupplier.CurrentRow.Cells[5].Value.ToString();
             EnableTrue();
         }
 
@@ -147,6 +151,11 @@ namespace QTS_ERP_Systems.MasterForms
         {
             string suplSearch = txtSearchISupply.Text.Trim();
             dgvSupplier.DataSource = db.FilterSupplier(suplSearch);
+        }
+
+        private void TxtSupplierId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
