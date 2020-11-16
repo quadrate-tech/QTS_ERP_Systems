@@ -44,7 +44,7 @@ namespace QTS_ERP_Systems.MasterForms
             TxtName.Clear();
             TxtAddress.Clear();
             TxtContact.Clear();
-
+            idBox.Clear();
         }
         private void EnableTrue()
         {
@@ -52,7 +52,7 @@ namespace QTS_ERP_Systems.MasterForms
             TxtName.Enabled = true;
             TxtAddress.Enabled = true;
             TxtContact.Enabled = true;
-
+            idBox.Enabled = true;
         }
         private void EnableFalse()
         {
@@ -60,6 +60,7 @@ namespace QTS_ERP_Systems.MasterForms
             TxtName.Enabled = false;
             TxtAddress.Enabled = false;
             TxtContact.Enabled = false;
+            idBox.Enabled = false;
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -79,7 +80,7 @@ namespace QTS_ERP_Systems.MasterForms
                 Name = TxtName.Text.Trim(),
                 Address = TxtAddress.Text.Trim(),
                 Contact = TxtContact.Text.Trim(),
-                IsActive = Service()
+                IsActive = false
 
             };
             db.InsertBusinessModel(Collection, bm);
@@ -87,26 +88,26 @@ namespace QTS_ERP_Systems.MasterForms
             FrmLoad();
 
         }
-        private bool Service()
-        {
-          bool Service_ ;
-            if (chBox.Checked)
-            {
-                Service_ = true;
-            }
-            else
-            {
-                Service_ = false;
-            }
-            return Service_;
-        }
+        //private bool Service()
+        //{
+        //  bool Service_ ;
+        //    if (chBox.Checked)
+        //    {
+        //        Service_ = true;
+        //    }
+        //    else
+        //    {
+        //        Service_ = false;
+        //    }
+        //    return Service_;
+        //}
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             bName = TxtName.Text;
             bAddress = TxtAddress.Text;
             bContact = TxtContact.Text;
-            bIsActive = Service();
+            bIsActive = false;
             db.UpdateBusinessModel(Collection, bId, bName, bAddress, bContact, bIsActive);
             ClearText();
             FrmLoad();
@@ -127,12 +128,13 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void DGVBusinessInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            idBox.Text= DGVBusinessInfo.CurrentRow.Cells[0].Value.ToString(); ;
             bId = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
             TxtName.Text = DGVBusinessInfo.CurrentRow.Cells[1].Value.ToString();
             TxtAddress.Text = DGVBusinessInfo.CurrentRow.Cells[2].Value.ToString();
             TxtContact.Text = DGVBusinessInfo.CurrentRow.Cells[3].Value.ToString();
-            chBox.Enabled = Convert.ToBoolean(DGVBusinessInfo.CurrentRow.Cells[4].Value.ToString());
+            
+            //chBox.Enabled = Convert.ToBoolean(DGVBusinessInfo.CurrentRow.Cells[4].Value.ToString());
         }
 
         private void TxtName_KeyUp(object sender, KeyEventArgs e)
@@ -147,8 +149,12 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void activate_Click(object sender, EventArgs e)
         {
+            //int Id = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
 
             //if (DGVBusinessInfo.SelectedRows.Count > 0)
+
+
+            //foreach (var d in data)
             {
                 bName = TxtName.Text;
                 bAddress = TxtAddress.Text;
@@ -159,12 +165,17 @@ namespace QTS_ERP_Systems.MasterForms
                 FrmLoad();
                 //int id = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
 
-                ////{
-                //    db.isactivebtn(id);
-                //    FrmLoad();
-                ////}
+                //{
+                //db.isactivebtn(id);
+                //FrmLoad();
+                //}
             }
 
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     } } 

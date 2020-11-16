@@ -195,6 +195,7 @@ namespace QTS_ERP_Systems
                     var result = Collection.AsQueryable().Where(u => u.Name.Contains(Name)).ToList();
                     return result;
                 }
+
                 else
                 {
                     IMongoCollection<BusinessModel> Collection = db.GetCollection<BusinessModel>("BusinessModels");
@@ -208,24 +209,31 @@ namespace QTS_ERP_Systems
                 throw;
             }
         }
-        public void isactivebtn(int id) {
-            IMongoCollection<BusinessModel> Collection = db.GetCollection<BusinessModel>("BusinessModels");
-            var item = Collection.AsQueryable().Where(u => u.Id== id);
-            var data = Collection.AsQueryable().Where(u => u.Id != id).ToList();
-            foreach (var d in data)
-            {
-              bool IsActiveLocal = false;
-               
-                var filterLocal = Builders<BusinessModel>.Filter.Eq("id", d);
-                var updateLocal = Builders<BusinessModel>.Update.Set("IsActive", IsActiveLocal);
 
-                Collection.UpdateOne(filterLocal, updateLocal);
-            }
-              bool IsActive = true;
-            var filter = Builders<BusinessModel>.Filter.Eq("id", item);
-            var update = Builders<BusinessModel>.Update.Set("IsActive", IsActive);
-            Collection.UpdateOne(filter, update);
-        }
+        //public List<BusinessModel> BData(int Id) {
+        //    IMongoCollection<BusinessModel> Collection = db.GetCollection<BusinessModel>("BusinessModels");
+        //    var result = Collection.AsQueryable().Where(u => u.Id.Contains(Id)).ToList();
+        //    return result;
+        //}
+
+        //public void isactivebtn(int id) {
+        //    IMongoCollection<BusinessModel> Collection = db.GetCollection<BusinessModel>("BusinessModels");
+        //    var item = Collection.AsQueryable().Where(u => u.Id== id);
+        //    var data = Collection.AsQueryable().Where(u => u.Id != id).ToList();
+        //    foreach (var d in data)
+        //    {
+        //      bool IsActiveLocal = false;
+               
+        //        var filterLocal = Builders<BusinessModel>.Filter.Eq("id", d);
+        //        var updateLocal = Builders<BusinessModel>.Update.Set("IsActive", IsActiveLocal);
+
+        //        Collection.UpdateOne(filterLocal, updateLocal);
+        //    }
+        //      bool IsActive = true;
+        //    var filter = Builders<BusinessModel>.Filter.Eq("id", item);
+        //    var update = Builders<BusinessModel>.Update.Set("IsActive", IsActive);
+        //    Collection.UpdateOne(filter, update);
+        //}
         public void DeleteOne(string Id)
         {
             IMongoCollection<Category> collection = db.GetCollection<Category>("Category");
