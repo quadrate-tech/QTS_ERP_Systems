@@ -157,10 +157,11 @@ namespace QTS_ERP_Systems.MasterForms
             //foreach (var d in data)
             if (DGVBusinessInfo.SelectedRows.Count > 0)
             {
-                string id = DGVBusinessInfo.SelectedRows[0].Cells[1].Value + string.Empty;
-
-                string message = "this part works "+id;
+                int id = Convert.ToInt32(DGVBusinessInfo.SelectedRows[0].Cells[0].Value) ;
+                var l = db.activeBusinessModel(id);
+                string message = "this part works "+l;
                 MessageBox.Show(message);
+                
             }
             else
             {

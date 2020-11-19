@@ -192,15 +192,17 @@ namespace QTS_ERP_Systems
                 if (!string.IsNullOrEmpty(Name))
                 {
                     IMongoCollection<BusinessModel> Collection = db.GetCollection<BusinessModel>("BusinessModels");
-                    var result = Collection.AsQueryable().Where(u => u.Name.Contains(Name)).ToList();
+                    var result = Collection.AsQueryable().Where(u => u.Name.Contains(Name)).ToList(); 
                     return result;
                 }
-
+               
                 else
                 {
                     IMongoCollection<BusinessModel> Collection = db.GetCollection<BusinessModel>("BusinessModels");
                     var result = Collection.AsQueryable().ToList();
+                   
                     return result;
+                   
                 }
             }
             catch (Exception ex)
@@ -209,8 +211,15 @@ namespace QTS_ERP_Systems
                 throw;
             }
         }
+        public int activeBusinessModel(int id)
+        {
+            IMongoCollection<BusinessModel> Collection = db.GetCollection<BusinessModel>("BusinessModels");
+            int result = Convert.ToInt32(Collection.AsQueryable().Where(u => u.Id != id));
+            return result;
+        }
 
-        //public List<BusinessModel> BData(int Id) {
+        //public List<BusinessModel> BData(int Id)
+        //{
         //    IMongoCollection<BusinessModel> Collection = db.GetCollection<BusinessModel>("BusinessModels");
         //    var result = Collection.AsQueryable().Where(u => u.Id.Contains(Id)).ToList();
         //    return result;
@@ -223,7 +232,7 @@ namespace QTS_ERP_Systems
         //    foreach (var d in data)
         //    {
         //      bool IsActiveLocal = false;
-               
+
         //        var filterLocal = Builders<BusinessModel>.Filter.Eq("id", d);
         //        var updateLocal = Builders<BusinessModel>.Update.Set("IsActive", IsActiveLocal);
 
