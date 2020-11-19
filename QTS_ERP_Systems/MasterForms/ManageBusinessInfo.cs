@@ -128,12 +128,12 @@ namespace QTS_ERP_Systems.MasterForms
 
         private void DGVBusinessInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idBox.Text= DGVBusinessInfo.CurrentRow.Cells[0].Value.ToString(); ;
+            idBox.Text = DGVBusinessInfo.CurrentRow.Cells[0].Value.ToString(); ;
             bId = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
             TxtName.Text = DGVBusinessInfo.CurrentRow.Cells[1].Value.ToString();
             TxtAddress.Text = DGVBusinessInfo.CurrentRow.Cells[2].Value.ToString();
             TxtContact.Text = DGVBusinessInfo.CurrentRow.Cells[3].Value.ToString();
-            
+
             //chBox.Enabled = Convert.ToBoolean(DGVBusinessInfo.CurrentRow.Cells[4].Value.ToString());
         }
 
@@ -157,40 +157,65 @@ namespace QTS_ERP_Systems.MasterForms
             //foreach (var d in data)
             if (DGVBusinessInfo.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(DGVBusinessInfo.SelectedRows[0].Cells[0].Value) ;
-                var l = db.activeBusinessModel(id);
-                string message = "this part works "+l;
-                MessageBox.Show(message);
                 
+                int numRows = DGVBusinessInfo.Rows.Count;
+                int idSlected = Convert.ToInt32(DGVBusinessInfo.SelectedRows[0].Cells[0].Value);
+                //var l = db.activeBusinessModel(id);
+                //string message = "this part works " + l;
+                //MessageBox.Show(message);
+                for (int i = 0; i<= numRows;i++)
+                {
+                    int id = Convert.ToInt32(DGVBusinessInfo.SelectedRows[0].Cells[0].Value);
+                    bName = TxtName.Text;
+                    bAddress = TxtAddress.Text;
+                    bContact = TxtContact.Text;
+                    if (id == idSlected)
+                    {
+                        bIsActive = true;
+                    }
+                    else { bIsActive = false; }
+                    string message = "this part works " + idSlected;
+                    MessageBox.Show(message);
+
+                    db.UpdateBusinessModel(Collection, id, bName, bAddress, bContact, bIsActive);
+                    ClearText();
+                    FrmLoad();
+                    //int id = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
+
+                    //{
+                    //db.isactivebtn(id);
+                    //FrmLoad();
+                    //}
+                }
+
             }
-            else
-            {
-                string message = " else part ";
-                MessageBox.Show(message);
-            }
+            //else
+            //{
+            //    string message = " else part ";
+            //    MessageBox.Show(message);
+            //}
+            //foreach (var d in numRows)
+            //{
+            //    bName = TxtName.Text;
+            //    bAddress = TxtAddress.Text;
+            //    bContact = TxtContact.Text;
+            //    bIsActive = true;
+            //    db.UpdateBusinessModel(Collection, bId, bName, bAddress, bContact, bIsActive);
+            //    ClearText();
+            //    FrmLoad();
+            //int id = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
 
-            {
-                bName = TxtName.Text;
-                bAddress = TxtAddress.Text;
-                bContact = TxtContact.Text;
-                bIsActive = true;
-                db.UpdateBusinessModel(Collection, bId, bName, bAddress, bContact, bIsActive);
-                ClearText();
-                FrmLoad();
-                //int id = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
-
-                //{
-                //db.isactivebtn(id);
-                //FrmLoad();
-                //}
-            }
-
-
+            //{
+            //db.isactivebtn(id);
+            //FrmLoad();
+            //}
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-    } } 
- 
+    } 
+
+        //private void label1_Click(object sender, EventArgs e)
+        //{
+
+        //}
+    } 
