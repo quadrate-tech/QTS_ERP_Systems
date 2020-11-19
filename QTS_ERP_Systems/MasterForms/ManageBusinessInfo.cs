@@ -159,25 +159,19 @@ namespace QTS_ERP_Systems.MasterForms
             {
                 
                 int numRows = DGVBusinessInfo.Rows.Count;
-                int idSlected = Convert.ToInt32(DGVBusinessInfo.SelectedRows[0].Cells[0].Value);
+                int id = Convert.ToInt32(DGVBusinessInfo.SelectedRows[0].Cells[0].Value);
                 //var l = db.activeBusinessModel(id);
-                //string message = "this part works " + l;
-                //MessageBox.Show(message);
-                for (int i = 0; i<= numRows;i++)
-                {
-                    int id = Convert.ToInt32(DGVBusinessInfo.SelectedRows[0].Cells[0].Value);
+                string message = "this part works " + id;
+                MessageBox.Show(message);
+                
+               
                     bName = TxtName.Text;
                     bAddress = TxtAddress.Text;
                     bContact = TxtContact.Text;
-                    if (id == idSlected)
-                    {
-                        bIsActive = true;
-                    }
-                    else { bIsActive = false; }
-                    string message = "this part works " + idSlected;
-                    MessageBox.Show(message);
-
+                    bIsActive = true;
                     db.UpdateBusinessModel(Collection, id, bName, bAddress, bContact, bIsActive);
+                   
+                
                     ClearText();
                     FrmLoad();
                     //int id = Convert.ToInt32(DGVBusinessInfo.CurrentRow.Cells[0].Value);
@@ -186,7 +180,7 @@ namespace QTS_ERP_Systems.MasterForms
                     //db.isactivebtn(id);
                     //FrmLoad();
                     //}
-                }
+                
 
             }
             //else
