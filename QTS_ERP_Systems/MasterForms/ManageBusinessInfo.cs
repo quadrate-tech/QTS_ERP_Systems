@@ -155,6 +155,19 @@ namespace QTS_ERP_Systems.MasterForms
 
 
             //foreach (var d in data)
+            if (DGVBusinessInfo.SelectedRows.Count > 0)
+            {
+                string id = DGVBusinessInfo.SelectedRows[0].Cells[1].Value + string.Empty;
+
+                string message = "this part works "+id;
+                MessageBox.Show(message);
+            }
+            else
+            {
+                string message = " else part ";
+                MessageBox.Show(message);
+            }
+
             {
                 bName = TxtName.Text;
                 bAddress = TxtAddress.Text;
